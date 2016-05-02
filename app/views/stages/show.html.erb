@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @stage.description %>
+</p>
+
+<p>
+  <strong>Video link:</strong>
+  <%= @stage.video_link %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @stage.completed %>
+</p>
+
+<%= link_to 'Edit', edit_stage_path(@stage) %> |
+<%= link_to 'Back', stages_path %>
