@@ -6,4 +6,7 @@ class Project < ActiveRecord::Base
   belongs_to :category
 
   has_many :stages
+
+  has_many :project_tags
+  has_many :tags, :through => :project_tags
 end
