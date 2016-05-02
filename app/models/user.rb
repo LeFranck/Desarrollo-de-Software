@@ -12,4 +12,7 @@ class User < ActiveRecord::Base
 
   has_many :comments
   has_many :projects, :through => :comments
+
+  has_many :commentvotes
+  has_many :comments, :through => :commentvotes
 end
