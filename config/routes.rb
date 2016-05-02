@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :tags
   resources :projects do
     resources :stages
+    resources :projectvotes
   end
   get 'home/index'
 

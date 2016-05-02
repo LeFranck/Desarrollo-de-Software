@@ -6,4 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :owners
   has_many :projects, :through => :owners
+
+  has_many :projectvotes
+  has_many :projects, :through => :projectvotes
 end

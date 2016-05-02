@@ -9,4 +9,7 @@ class Project < ActiveRecord::Base
 
   has_many :project_tags
   has_many :tags, :through => :project_tags
+
+  has_many :projectvotes
+  has_many :users, :through => :projectvotes
 end
