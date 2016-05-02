@@ -12,4 +12,7 @@ class Project < ActiveRecord::Base
 
   has_many :projectvotes
   has_many :users, :through => :projectvotes
+
+  has_many :comments
+  has_many :users, :through => :comments
 end

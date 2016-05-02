@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :projects do
     resources :stages
     resources :projectvotes
+    resources :comments
   end
   get 'home/index'
 
