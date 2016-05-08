@@ -1,4 +1,6 @@
 class CommentvotesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_comment
   before_action :set_commentvote, only: [:show, :edit, :update, :destroy]
 
   # GET /commentvotes
@@ -71,4 +73,9 @@ class CommentvotesController < ApplicationController
     def commentvote_params
       params.require(:commentvote).permit(:type, :user_id, :comment_id)
     end
+
+    def set_comment
+      @comment = Comment.find(params[:comment_id])
+    end
+
 end
