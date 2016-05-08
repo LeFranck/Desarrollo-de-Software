@@ -15,5 +15,5 @@
   <%= @commentvote.comment_id %>
 </p>
 
-<%= link_to 'Edit', edit_commentvote_path(@commentvote) %> |
-<%= link_to 'Back', commentvotes_path %>
+<%= link_to 'Edit', edit_comment_commentvote_path(@comment, @commentvote) %> |
+<%= link_to 'Back', comment_commentvotes_path(@comment) %>
