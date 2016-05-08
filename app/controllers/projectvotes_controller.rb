@@ -26,11 +26,12 @@ class ProjectvotesController < ApplicationController
   # POST /projectvotes
   # POST /projectvotes.json
   def create
-    @projectvote = Projectvote.new(projectvote_params)
+    @projectvote = @project.projectvotes.new(projectvote_params)
+    @projectvote.user = current_user
 
     respond_to do |format|
       if @projectvote.save
-        format.html { redirect_to @projectvote, notice: 'Projectvote was successfully created.' }
+        format.html { redirect_to [@project, @projectvote], notice: 'Projectvote was successfully created.' }
         format.json { render :show, status: :created, location: @projectvote }
       else
         format.html { render :new }
@@ -66,7 +67,7 @@ class ProjectvotesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_projectvote
-      @projectvote = Projectvote.find(params[:id])
+      @projectvote = @project.projectvotes.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
