@@ -15,4 +15,11 @@ class User < ActiveRecord::Base
 
   has_many :commentvotes
   has_many :comments, :through => :commentvotes
+
+  #Paperclip
+  has_attached_file :avatar
+
+  validates_attachment :avatar,
+  :content_type => { :content_type => ["image/jpg", "image/png"] },
+  :size => { :in => 0..2.megabytes }
 end
