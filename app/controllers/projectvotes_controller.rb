@@ -16,7 +16,7 @@ class ProjectvotesController < ApplicationController
 
   # GET /projectvotes/new
   def new
-    @projectvote = Projectvote.new
+    @projectvote = @project.projectvotes.new
   end
 
   # GET /projectvotes/1/edit
