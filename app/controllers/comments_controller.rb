@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    @comments = @project.comments.all
   end
 
   # GET /comments/1
@@ -67,7 +67,7 @@ class CommentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
-      @comment = Comment.find(params[:id])
+      @comment = @project.comments.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
