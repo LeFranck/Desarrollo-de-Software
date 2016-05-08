@@ -18,7 +18,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   username: desarrollo_de_software
-  password: <%= ENV['DESARROLLO_DE_SOFTWARE_DATABASE_PASSWORD'] %>
+  password:  ;T5ZsQn_ #<%= ENV['DESARROLLO_DE_SOFTWARE_DATABASE_PASSWORD'] %>
   host: localhost
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
