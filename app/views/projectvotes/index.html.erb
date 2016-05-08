@@ -18,9 +18,9 @@
         <td><%= projectvote.rating %></td>
         <td><%= projectvote.user_id %></td>
         <td><%= projectvote.project_id %></td>
-        <td><%= link_to 'Show', projectvote %></td>
-        <td><%= link_to 'Edit', edit_projectvote_path(projectvote) %></td>
-        <td><%= link_to 'Destroy', projectvote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', project_projectvote_path(@project, projectvote) %></td>
+        <td><%= link_to 'Edit', edit_project_projectvote_path(@project, projectvote) %></td>
+        <td><%= link_to 'Destroy', [@project, projectvote], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
