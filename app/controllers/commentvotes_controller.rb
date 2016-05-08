@@ -16,7 +16,7 @@ class CommentvotesController < ApplicationController
 
   # GET /commentvotes/new
   def new
-    @commentvote = Commentvote.new
+    @commentvote = @comment.commentvotes.new
   end
 
   # GET /commentvotes/1/edit
@@ -26,11 +26,12 @@ class CommentvotesController < ApplicationController
   # POST /commentvotes
   # POST /commentvotes.json
   def create
-    @commentvote = Commentvote.new(commentvote_params)
+    @commentvote = @comment.commentvotes.new(commentvote_params)
+    @commentvote.user = current_user
 
     respond_to do |format|
       if @commentvote.save
-        format.html { redirect_to @commentvote, notice: 'Commentvote was successfully created.' }
+        format.html { redirect_to [@comment, @commentvote], notice: 'Commentvote was successfully created.' }
         format.json { render :show, status: :created, location: @commentvote }
       else
         format.html { render :new }
