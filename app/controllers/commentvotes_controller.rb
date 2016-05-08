@@ -6,7 +6,7 @@ class CommentvotesController < ApplicationController
   # GET /commentvotes
   # GET /commentvotes.json
   def index
-    @commentvotes = Commentvote.all
+    @commentvotes = @comment.commentvotes.all
   end
 
   # GET /commentvotes/1

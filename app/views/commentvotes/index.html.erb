@@ -18,9 +18,9 @@
         <td><%= commentvote.type %></td>
         <td><%= commentvote.user_id %></td>
         <td><%= commentvote.comment_id %></td>
-        <td><%= link_to 'Show', commentvote %></td>
-        <td><%= link_to 'Edit', edit_commentvote_path(commentvote) %></td>
-        <td><%= link_to 'Destroy', commentvote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', comment_commentvote_path(@comment, commentvote) %></td>
+        <td><%= link_to 'Edit', edit_comment_commentvote_path(@comment, commentvote) %></td>
+        <td><%= link_to 'Destroy', [@comment, commentvote], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Commentvote', new_commentvote_path %>
+<%= link_to 'New Commentvote', new_comment_commentvote_path(@comment) %>
