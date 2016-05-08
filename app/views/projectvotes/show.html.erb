@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @projectvote.rating %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @projectvote.user_id %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @projectvote.project_id %>
+</p>
+
+<%= link_to 'Edit', edit_projectvote_path(@projectvote) %> |
+<%= link_to 'Back', projectvotes_path %>
