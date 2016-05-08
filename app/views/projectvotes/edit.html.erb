@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @projectvote %> |
-<%= link_to 'Back', projectvotes_path %>
+<%= link_to 'Show', project_projectvote_path(@project, @projectvote) %> |
+<%= link_to 'Back', project_projectvotes_path(@project) %>

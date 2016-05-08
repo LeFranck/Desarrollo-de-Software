@@ -45,7 +45,7 @@ class ProjectvotesController < ApplicationController
   def update
     respond_to do |format|
       if @projectvote.update(projectvote_params)
-        format.html { redirect_to @projectvote, notice: 'Projectvote was successfully updated.' }
+        format.html { redirect_to project_projectvotes_path(@project), notice: 'Projectvote was successfully updated.' }
         format.json { render :show, status: :ok, location: @projectvote }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class ProjectvotesController < ApplicationController
   def destroy
     @projectvote.destroy
     respond_to do |format|
-      format.html { redirect_to projectvotes_url, notice: 'Projectvote was successfully destroyed.' }
+      format.html { redirect_to project_projectvotes_path(@project), notice: 'Projectvote was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
