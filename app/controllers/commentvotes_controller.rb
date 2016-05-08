@@ -45,7 +45,7 @@ class CommentvotesController < ApplicationController
   def update
     respond_to do |format|
       if @commentvote.update(commentvote_params)
-        format.html { redirect_to @commentvote, notice: 'Commentvote was successfully updated.' }
+        format.html { redirect_to [@comment, @commentvote], notice: 'Commentvote was successfully updated.' }
         format.json { render :show, status: :ok, location: @commentvote }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class CommentvotesController < ApplicationController
   def destroy
     @commentvote.destroy
     respond_to do |format|
-      format.html { redirect_to commentvotes_url, notice: 'Commentvote was successfully destroyed.' }
+      format.html { redirect_to comment_commentvotes_path(@comment), notice: 'Commentvote was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
