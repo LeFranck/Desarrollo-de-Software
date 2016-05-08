@@ -10,7 +10,7 @@ gem 'pg'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 #Paperclip
-gem "paperclip", "~> 5.0.0.beta1"
+gem "paperclip", "~> 4.3.6"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
