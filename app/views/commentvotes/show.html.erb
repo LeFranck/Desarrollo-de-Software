@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @commentvote.type %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @commentvote.user_id %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @commentvote.comment_id %>
+</p>
+
+<%= link_to 'Edit', edit_comment_commentvote_path(@comment, @commentvote) %> |
+<%= link_to 'Back', comment_commentvotes_path(@comment) %>

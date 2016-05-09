@@ -5,7 +5,11 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    if params[:user_id]
+      @projects = Project.joins("LEFT JOIN owners ON owners.project_id = projects.id").where(:owners => {user_id: params[:user_id]})
+    else
+      @projects = Project.all
+    end
   end
 
   # GET /projects/1
@@ -26,6 +30,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
+    @project.owners.new(user: current_user)
 
     respond_to do |format|
       if @project.save
