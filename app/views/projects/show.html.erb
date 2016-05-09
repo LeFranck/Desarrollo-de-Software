@@ -1,14 +1,118 @@
-<p id="notice"><%= notice %></p>
+<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+<div class="container col-sm-2">
+</div>
+<div class="container col-sm-8 project-content">
+    <div class="row page-header">
+        <div class="col-sm-1 votes">
+            <div class="vote positive">
+                <i class="fa fa-arrow-up"></i>
+            </div>
+            <div class="vote negative">
+                <i class="fa fa-arrow-down"></i>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <h1 class="blog-title">
+                <%= @project.title %>
+            </h1>
+            <p class="lead blog-description">
+            <%= @project.description %>
+            </p>
+            <p class="blog-meta">
+            <% @project.users.each do |user| %>
+                <%= user.username %>,
+            <% end %>
+        </p>
+        <p class="blog-meta">
+        Fecha creacion: <%= @project.created_at.strftime("%d %b %Y")%>
+    </p>
+    <%= link_to 'Editar', edit_project_path(@project), class: 'btn btn-primary btn-xs' %>
+        </div>
+    </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+    <div class="row">
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="#Content" data-toggle="tab">Content</a>
+            </li>
+            <li>
+                <a href="#Comentarios" data-toggle="tab">Comentarios</a>
+            </li>
+        </ul>
+    </div>
 
-<p>
-  <strong>Video link:</strong>
-  <%= @project.video_link %>
-</p>
+    <div class="row">
+        <section class="tab-content">
+            <article class="tab-pane active" id="Content">
+                <h3>Content</h3>
+                <p>
+                    <%= @project.content %>
+                </p>
+            </article>
+            <article class="tab-pane" id="Comentarios">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="page-header">
+                                <h1>
+                                    <small class="pull-right">
+                                        <%= @project.comments.count %>
+                                    comentarios</small>
+                                    Comentarios
+                                </h1>
+                            </div> 
+                            <div class="comments-list">
+                                <% @project.comments.each do |comment| %>
+                                <div class="media">
+                                    <p class="pull-right"><small>
+                                    <%= comment.created_at.strftime("%d %b %Y, %H:%M") %></small></p>
+                                    <a class="media-left" href="#">
+                                        <%#/* Agregar aqui imagen del usuario */%>
+                                        <%#<img src="http://lorempixel.com/40/40/people/1/">%>
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading user_name">
+                                            <%= comment.user.username %>
+                                        </h4>
+                                        <%= comment.content %>
+                                    </div>
+                                </div>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <h3>Agregar Comentario</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="widget-area no-padding blank">
+                                <div class="status-upload">
+                                    <form>
+                                        <textarea placeholder="Escribe tu comentario en este espacio..." ></textarea>
+                                        <button type="submit" 
+                                            class="btn btn-success btn">
+                                            <i class="fa fa-share"></i>Agregar
+                                        </button>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+    <div class="row footer">
+        <%= link_to 'Volver', projects_path %>
+    </div>
+</div>
+<div class="container col-sm-12">
+    <% debug(@project.users) %>
+</div>
+
+
