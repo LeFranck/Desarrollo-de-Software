@@ -35,13 +35,14 @@
     </div>
   </div>
   <div class="col-sm-8">
-    <%= link_to 'New Project', new_project_path %>
-    <h1>Listing Projects</h1>
+    <%= link_to 'Nuevo Proyecto', new_project_path %>
+    <h1>Proyectos</h1>
         <% @projects.each do |project| %>
           <div class="media">
             <div class="media-left">
               <a href="#">
-                <img class="media-object" src="../../../public/open_book.png" alt="imagen no disponible" width="64" height="64">
+              <!--  <img class="media-object" src="../../assets/images/open_book.png" alt="imagen no disponible" width="64" height="64"> -->
+                <%= image_tag image_path('open_book.png'), size: "128x128", alt: "Imagen no disponible" %>
               </a>
             </div>
             <div class="media-body">
@@ -56,9 +57,9 @@
               </div>
             </div>
             <div class="media-right">
-              <%= link_to 'Show', project %>
-              <%= link_to 'Edit', edit_project_path(project) %>
-              <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to 'Ver', project %>
+              <%= link_to 'Editar', edit_project_path(project) %>
+              <%= link_to 'Eliminar', project, method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
             <hr />
           </div>
