@@ -8,7 +8,7 @@ $(document).ready(function() {
         $(this).prevAll().removeClass('star-active');
     });
     $("#ComentarBtn").click(function () {
-        console.log('test');
         $('#tabs a[href="#Comentarios"]').tab('show');
+        $('#comment_box').focus();
     });
 });

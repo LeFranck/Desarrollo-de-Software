@@ -23,9 +23,16 @@
             <%= @project.description %>
             </p>
             <p class="blog-meta">
+                <p>
             <% @project.users.each do |user| %>
-                <%= user.username %>,
+                <% user.username %>
             <% end %>
+                </p>
+                <p>
+            <% @project.owners.each do |owner| %>
+                <%= owner.user.username %>,
+            <% end %>
+                </p>
         </p>
         <p class="blog-meta">
         Fecha creacion: <%= @project.created_at.strftime("%d %b %Y")%>
