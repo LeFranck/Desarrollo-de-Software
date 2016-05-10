@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :index] do
-    resources :projects, only: [:index]
+    resources :projects, except: [:new, :create]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

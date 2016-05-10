@@ -29,6 +29,7 @@ User.create({
     "firstname"=>"Albert",
     "lastname"=>"Einstein",
     "password"=>"123456",
+    "birthday"=>"1879-03-14",
     "email"=>"aeinstein@example.com",
 })
 User.create({
@@ -36,6 +37,7 @@ User.create({
     "firstname"=>"Isaac",
     "lastname"=>"Newton",
     "password"=>"123456",
+    "birthday"=>"1652-01-04",
     "email"=>"inewton@example.com",
 })
 Category.create({
