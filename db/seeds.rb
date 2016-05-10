@@ -41,6 +41,12 @@ User.create({
     "email"=>"inewton@example.com",
 })
 Category.create({
+    "name"=>"Otros",
+})
+Category.create({
+    "name"=>"Lenguaje",
+})
+Category.create({
     "name"=>"Matematicas",
 })
 Category.create({
@@ -48,6 +54,15 @@ Category.create({
 })
 Category.create({
     "name"=>"Computacion",
+})
+Category.create({
+    "name"=>"Arte",
+})
+Category.create({
+    "name"=>"Musica",
+})
+Category.create({
+    "name"=>"Quimica",
 })
 Category.create({
     "name"=>"Fisica",

@@ -23,14 +23,17 @@
             <li><a href="#">Lenguaje</a></li>
             <li><a href="#">Matemáticas</a></li>
             <li><a href="#">Ciencias Naturales</a></li>
+            <li><a href="#">Física</a></li>
+            <li><a href="#">Química</a></li>
+            <li><a href="#">Biología</a></li>
+            <li><a href="#">Computación</a></li>
             <li><a href="#">Ciencias Sociales</a></li>
             <li><a href="#">Arte</a></li>
             <li><a href="#">Música</a></li>
-            <li><a href="#">Lenguaje</a></li>
             <li><a href="#">Deportes</a></li>
             <li><a href="#">Otros</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
     </div>
   </div>
@@ -41,8 +44,7 @@
           <div class="media">
             <div class="media-left">
               <a href="#">
-              <!--  <img class="media-object" src="../../assets/images/open_book.png" alt="imagen no disponible" width="64" height="64"> -->
-                <%= image_tag image_path('open_book.png'), size: "128x128", alt: "Imagen no disponible" %>
+                <%= image_tag image_path('open_book.png', size: "128x128", alt: "Imagen no disponible")%>
               </a>
             </div>
             <div class="media-body">
@@ -68,8 +70,6 @@
             <hr />
           </div>
         <% end %>
-
     <br>
-
   </div>
 </div>
