@@ -2,6 +2,7 @@ class ProjectvotesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_project
   before_action :set_projectvote, only: [:show, :edit, :update, :destroy]
+  before_action :validate_owner, only: [:edit, :update, :destroy]
 
   # GET /projectvotes
   # GET /projectvotes.json
@@ -77,5 +78,17 @@ class ProjectvotesController < ApplicationController
 
     def set_project
       @project = Project.find(params[:project_id])
+    end
+
+    def validate_owner
+      if !(@projectvote.user_id == current_user.id)
+        if params[:project_id]
+          redirect_to project_path(Project.find(params[:project_id])), notice: 'Access Denied'
+        else
+          redirect_to projects_path, notice: 'Access Denied'
+        end
+      else
+        true
+      end
     end
 end
