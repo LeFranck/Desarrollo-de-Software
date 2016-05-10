@@ -4,7 +4,7 @@
             <h1>
                 <small class="pull-right">
                     <%= @project.comments.count %>
-                    <%= @project.comments.count < 2 ? 'Comentario' : 'Comentarios' %>
+                    <%= @project.comments.count == 1 ? 'Comentario' : 'Comentarios' %>
                 </small>
             </h1>
         </div> 
