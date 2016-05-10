@@ -90,7 +90,6 @@ class ProjectsController < ApplicationController
     end
 
     def validate_owner
-      session[:return_to] ||= request.referer
       if !(@project.owners.exists?(:user_id => current_user.id))
         if params[:user_id] && params[:id]
           redirect_to user_project_path(User.find(params[:user_id]), Project.find(params[:id])), notice: 'Access Denied'
