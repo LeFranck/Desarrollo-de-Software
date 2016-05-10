@@ -4,16 +4,51 @@
 <div class="container col-sm-8 project-content">
     <div class="row page-header">
         <div class="col-sm-1 votes">
-            <div class="vote positive">
-                <i class="fa fa-arrow-up"></i>
-            </div>
-            <div class="vote negative">
-                <i class="fa fa-arrow-down"></i>
+            <a href="#AgregarComentario">
+                <div class="vote negative" id="ComentarBtn">
+                    <i class="fa fa-comment">
+                    </i>
+                </div>
+            </a>
+            <div class="vote edit">
+                <%= link_to '', edit_project_path(@project), class: 'fa fa-wrench' %>
             </div>
         </div>
         <div class="col-sm-9">
             <h1 class="blog-title">
                 <%= @project.title %>
+                <div class="starvotes" id="starvotes">
+
+                    <!--
+                <%= form_for([@project]) do |f| %>
+                  <div class="field">
+                      <%= f.hidden_field :rating, :value => 4 %><br>
+                  </div>
+                  <div class="actions">
+                    <%= f.submit %>
+                  </div>
+                <% end %>
+                    -->
+
+                <% averageRating.round(1) %>
+                <%= number_with_precision(averageRating.round(1), :precision => 1, :separator => ',') %>
+                <% n = averageRating %>
+
+                <% for i in 1..5 %>
+                    <% i = 0 %>
+                    <% if n > 1 %>
+                        <i class="star-1 fa fa-star starvote fa-fw"></i>
+                        <% n -= 1 %>
+                    <% elsif (n > 0) && (n < 1) %>
+                        <i class="star-1 fa fa-star-half-o starvote fa-fw"></i>
+                        <% n -= 1 %>
+                    <% else %>
+                        <i class="star-1 fa fa-star-o starvote fa-fw"></i>
+                    <% end %>
+                <% end %>
+
+
+                </div>
             </h1>
             <p class="lead blog-description">
             <%= @project.description %>
@@ -26,12 +61,11 @@
         <p class="blog-meta">
         Fecha creacion: <%= @project.created_at.strftime("%d %b %Y")%>
     </p>
-    <%= link_to 'Editar', edit_project_path(@project), class: 'btn btn-primary btn-xs' %>
         </div>
     </div>
 
     <div class="row">
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs" id="tabs">
             <li class="active">
                 <a href="#Content" data-toggle="tab">Content</a>
             </li>
@@ -46,10 +80,32 @@
             <article class="tab-pane active" id="Content">
                 <h3>Content</h3>
                 <p>
-                    <%= @project.content %>
+                    CONTENT GOES HERE
                 </p>
             </article>
             <article class="tab-pane" id="Comentarios">
+                <div class="container">
+                    <div class="row">
+                        <h3 id="AgregarComentario">Agregar Comentario</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="widget-area no-padding blank">
+                                <div class="status-upload">
+                                    <form>
+                                        <textarea placeholder="Escribe tu comentario en este espacio..." ></textarea>
+                                        <button type="submit" 
+                                            class="btn btn-success btn">
+                                            <i class="fa fa-share"></i>Agregar
+                                        </button>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8">
@@ -82,28 +138,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <h3>Agregar Comentario</h3>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="widget-area no-padding blank">
-                                <div class="status-upload">
-                                    <form>
-                                        <textarea placeholder="Escribe tu comentario en este espacio..." ></textarea>
-                                        <button type="submit" 
-                                            class="btn btn-success btn">
-                                            <i class="fa fa-share"></i>Agregar
-                                        </button>
-
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
             </article>
         </section>
     </div>
@@ -112,7 +146,7 @@
     </div>
 </div>
 <div class="container col-sm-12">
-    <% debug(@project.users) %>
+    <% debug(@project) %>
 </div>
 
 

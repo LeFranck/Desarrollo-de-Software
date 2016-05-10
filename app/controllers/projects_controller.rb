@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
+
   # GET /projects
   # GET /projects.json
   def index
@@ -15,6 +16,15 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+  end
+
+  helper_method :averageRating
+  def averageRating
+      rating = 0.0
+      @project.projectvotes.each do |vote|
+          rating += vote.rating
+      end
+      rating / @project.projectvotes.count
   end
 
   # GET /projects/new

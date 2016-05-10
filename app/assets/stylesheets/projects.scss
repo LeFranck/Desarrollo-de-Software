@@ -4,20 +4,46 @@
 
 $yes : #4ab79a;
 $no : #EE5E91;
+$star : #ffcc00;
+$edit : #337ab7;
 .footer {
     margin-bottom:30px;
 }
-.vote {
-    width:100%;
-    height:50%;
-    margin-bottom:10px;
-    font-size:50px;
+
+
+.edit {
+    color:$edit;
+    text-decoration:none !important;
 }
-.vote.positive {
-    color:$yes;
+.vote {
+    font-size:50px;
+    text-shadow: 3px 3px #000;
+    &:active {
+        -ms-transform: translate(2px,2px); /* IE 9 */
+        -webkit-transform: translate(2px,2px); /* Safari */
+        transform: translate(2px,2px);
+        text-shadow: 1px 1px #000;
+    }
+}
+.star-inactive {
+    color:#000;
+}
+.star-active {
+    color:$star;
+}
+.starvote {
+    &:hover {
+        color:$star;
+    }
+    font-size:30px;
+    &:active {
+    }
 }
 .vote.negative {
     color:$no;
+    &:hover {
+        color:darken($no,10%);
+    }
 }
 .votes {
     height:140px;
