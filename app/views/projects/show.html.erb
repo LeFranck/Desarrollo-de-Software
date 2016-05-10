@@ -1,8 +1,16 @@
 <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+<div class="container" id="vista_proyecto">
 <div class="container col-sm-2">
 </div>
 <div class="container col-sm-8 project-content">
-    <div class="row page-header">
+    <% if defined? project.category.name %>
+        <div class="row">
+            <h1 style="margin:0px">
+                <%= @project.category.name %>
+            </h1>
+        </div>
+    <% end %>
+    <div class="row page-header" style="margin-top:0px">
         <div class="col-sm-1 votes">
             <a href="#AgregarComentario">
                 <div class="vote negative" id="ComentarBtn">
@@ -16,16 +24,24 @@
         </div>
         <div class="col-sm-9">
             <h1 class="blog-title">
-                <%= @project.title %>
+                <%= @project.title? ? @project.title : "Sin titulo"  %>
                 <%= render 'stars' %>
+                <script>ratingStars()</script>
             </h1>
             <p class="lead blog-description">
             <%= @project.description %>
             </p>
             <p class="blog-meta">
+                <p>
             <% @project.users.each do |user| %>
-                <%= user.username %>,
+                <% user.username %>
             <% end %>
+                </p>
+                <p>
+            <% @project.owners.each do |owner| %>
+                <%= owner.user.username %>,
+            <% end %>
+                </p>
         </p>
         <p class="blog-meta">
         Fecha creacion: <%= @project.created_at.strftime("%d %b %Y")%>
@@ -65,6 +81,8 @@
 </div>
 <div class="container col-sm-12">
     <% debug(@project) %>
+</div>
+</div>
 </div>
 
 

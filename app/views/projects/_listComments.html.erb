@@ -4,7 +4,7 @@
             <h1>
                 <small class="pull-right">
                     <%= @project.comments.count %>
-                    <%= @project.comments.count < 2 ? 'Comentario' : 'Comentarios' %>
+                    <%= @project.comments.count == 1 ? 'Comentario' : 'Comentarios' %>
                 </small>
             </h1>
         </div> 
@@ -12,7 +12,7 @@
 </div>
 <div class="row">
     <div class="comments-list">
-        <% @project.comments.each do |comment| %>
+        <% @project.comments.reverse_each do |comment| %>
             <div class="media">
                 <p class="pull-right"><small>
                     <%= comment.created_at.strftime("%d %b %Y, %H:%M") %></small></p>

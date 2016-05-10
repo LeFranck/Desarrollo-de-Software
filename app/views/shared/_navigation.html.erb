@@ -7,23 +7,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Feria Online</a>
+        <%= link_to 'Feria Online', root_url, class: "navbar-brand"%>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-left">
-            <li><a href="/..">Inicio</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Proyectos<b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Categorias</a></li>
-                    <li><a href="projects">Todos</a></li>
-                    <%#<li class="divider"></li>%>
-                    <%#<li><a href="#">Separated link</a></li>%>
-                </ul>
-            </li>
-            <li><a href="users">Usuarios</a></li>
+            <li><%= link_to 'Proyectos', projects_path %></li>
+            <li><%= link_to 'Usuarios', users_path %></li>
         </ul>
         <div class="col-sm-3 col-md-3">
             <form class="navbar-form" role="search">

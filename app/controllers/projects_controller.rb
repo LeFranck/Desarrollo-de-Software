@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
 
@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
   def averageRating
       rating = 0.0
       @project.projectvotes.each do |vote|
-          rating += vote.rating
+          rating += vote.rating.to_f
       end
       rating / @project.projectvotes.count
   end

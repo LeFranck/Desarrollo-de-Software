@@ -7,7 +7,7 @@
             <div class="status-upload">
                 <%= form_for([@project, @project.comments.build]) do |f| %>
                     <div class="field">
-                        <%= f.text_area :content %>
+                        <%= f.text_area :content, :id => 'comment_box' %>
                     </div>
                     <div class="actions">
                         <%= f.submit 'Agregar', :class => 'btn btn-success form-submit' %>
