@@ -3,11 +3,13 @@
 <div class="container col-sm-2">
 </div>
 <div class="container col-sm-8 project-content">
-    <div class="row">
+    <% if defined? project.category.name %>
+        <div class="row">
             <h1 style="margin:0px">
-            <%= @project.category.name %>
+                <%= @project.category.name %>
             </h1>
-    </div>
+        </div>
+    <% end %>
     <div class="row page-header" style="margin-top:0px">
         <div class="col-sm-1 votes">
             <a href="#AgregarComentario">
@@ -22,7 +24,7 @@
         </div>
         <div class="col-sm-9">
             <h1 class="blog-title">
-                <%= @project.title %>
+                <%= @project.title? ? @project.title : "Sin titulo"  %>
                 <%= render 'stars' %>
                 <script>ratingStars()</script>
             </h1>
