@@ -16,12 +16,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :titulo %><br />
+    <%= f.text_field :title %>
   </div>
 
   <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.label :descripción %><br />
+    <%= f.text_area :description, :class => "text-area" %>
   </div>
 
   <div class="field">
@@ -29,26 +30,18 @@
     <%= f.text_field :video_link %>
   </div>
 
-  <div class="dropdown">
-    <%= f.label :categoria %><br />
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      Dropdown
-      <span class="caret"></span>
-    </button>
-    <br />
-    <br />
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-      <li><a href="#">Otros</a></li>
-      <li><a href="#">Lenguaje</a></li>
-      <li><a href="#">Matemáticas</a></li>
-      <li><a href="#">Ciencias Naturales</a></li>
-      <li><a href="#">Ciencias Sociales</a></li>
-      <li><a href="#">Arte</a></li>
-      <li><a href="#">Música</a></li>
-      <li><a href="#">Lenguaje</a></li>
-      <li><a href="#">Deportes</a></li>
-    </ul>
-  </div>
+<div class="field">
+   <%= f.label :categoría %><br />
+   <%= f.select :category,
+     ([['Otros', 0],
+     ['Lenguaje', 1],
+     ['Matemáticas', 2],
+     ['Ciencias Naturales', 3],
+     ['Ciencias Sociales', 4],
+     ['Arte', 5],
+     ['Musica', 6],
+     ['Deportes', 7]]), {} , :class => "category-dropdown" %>
+</div>
 
   <div class="actions">
     <%= f.submit %>

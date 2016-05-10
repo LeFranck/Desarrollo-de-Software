@@ -11,6 +11,21 @@
   width: 500px;
 }
 
+.panel .field{
+  margin-bottom: 20px;
+}
+
+.panel .text-area {
+  width: 80%;
+  height: 140px;
+  max-width: 80%;
+  max-height: 200px;
+}
+
+.category-dropdown {
+  background: #fff;
+}
+
 @media (min-width: 768px) {
   .sidebar-nav .navbar .navbar-collapse {
     padding: 0;
@@ -123,6 +138,5 @@ $edit : #337ab7;
 }
 .comments-list .media{
     border-bottom: 1px dotted #ccc;
-
 }
 }
