@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :validate_owner, only: [:edit, :update, :destroy]
 
 
   # GET /projects
@@ -86,5 +87,19 @@ class ProjectsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
       params.require(:project).permit(:description, :video_link, :title, :content)
+    end
+
+    def validate_owner
+      if !(@project.owners.exists?(:user_id => current_user.id))
+        if params[:user_id] && params[:id]
+          redirect_to user_project_path(User.find(params[:user_id]), Project.find(params[:id])), notice: 'Access Denied'
+        elsif params[:id]
+          redirect_to project_path(Project.find(params[:id])), notice: 'Access Denied'
+        else
+          redirect_to projects_path, notice: 'Access Denied'
+        end
+      else
+        true
+      end
     end
 end
