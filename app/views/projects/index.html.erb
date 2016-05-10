@@ -23,10 +23,13 @@
             <li><a href="#">Lenguaje</a></li>
             <li><a href="#">Matemáticas</a></li>
             <li><a href="#">Ciencias Naturales</a></li>
+            <li><a href="#">Física</a></li>
+            <li><a href="#">Química</a></li>
+            <li><a href="#">Biología</a></li>
+            <li><a href="#">Computación</a></li>
             <li><a href="#">Ciencias Sociales</a></li>
             <li><a href="#">Arte</a></li>
             <li><a href="#">Música</a></li>
-            <li><a href="#">Lenguaje</a></li>
             <li><a href="#">Deportes</a></li>
             <li><a href="#">Otros</a></li>
           </ul>
@@ -58,7 +61,7 @@
               </div>
             </div>
             <div class="media-right">
-                <%= link_to 'Ver', project, :class => 'btn btn-primary btn-block' %>
+              <%= link_to 'Ver', project, :class => 'btn btn-primary btn-block' %>
               <%= link_to 'Editar', edit_project_path(project), :class => 'btn btn-warning btn-block' %>
               <%= link_to 'Eliminar', project, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-block' %>
             </div>

@@ -30,18 +30,10 @@
     <%= f.text_field :video_link %>
   </div>
 
-<div class="field">
-   <%= f.label :categoría %><br />
-   <%= f.select :category,
-     ([['Otros', 0],
-     ['Lenguaje', 1],
-     ['Matemáticas', 2],
-     ['Ciencias Naturales', 3],
-     ['Ciencias Sociales', 4],
-     ['Arte', 5],
-     ['Musica', 6],
-     ['Deportes', 7]]), {} , :class => "category-dropdown" %>
-</div>
+  <div class="field">
+    <%= f.label :categoría %><br />
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

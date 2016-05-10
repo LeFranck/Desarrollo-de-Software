@@ -7,20 +7,20 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Project.create({
-    "title"=>"ej1", 
-    "video_link"=>"http://www.youtube.com/", 
+    "title"=>"ej1",
+    "video_link"=>"http://www.youtube.com/",
     "description"=>"Breve descripcion de un proyecto...",
     "category_id"=>"1"
 })
 Project.create({
-    "title"=>"ej2", 
-    "video_link"=>"http://www.youtube.com/", 
+    "title"=>"ej2",
+    "video_link"=>"http://www.youtube.com/",
     "description"=>"Breve descripcion de un proyecto...2",
     "category_id"=>"2"
 })
 Project.create({
-    "title"=>"ej3", 
-    "video_link"=>"http://www.youtube.com/", 
+    "title"=>"ej3",
+    "video_link"=>"http://www.youtube.com/",
     "description"=>"Breve descripcion de un proyecto...3",
     "category_id"=>"1"
 })
@@ -39,6 +39,12 @@ User.create({
     "email"=>"inewton@example.com",
 })
 Category.create({
+    "name"=>"Otros",
+})
+Category.create({
+    "name"=>"Lenguaje",
+})
+Category.create({
     "name"=>"Matematicas",
 })
 Category.create({
@@ -46,6 +52,15 @@ Category.create({
 })
 Category.create({
     "name"=>"Computacion",
+})
+Category.create({
+    "name"=>"Arte",
+})
+Category.create({
+    "name"=>"Musica",
+})
+Category.create({
+    "name"=>"Quimica",
 })
 Category.create({
     "name"=>"Fisica",
