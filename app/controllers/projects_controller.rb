@@ -2,15 +2,29 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
+
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    if params[:user_id]
+      @projects = Project.joins("LEFT JOIN owners ON owners.project_id = projects.id").where(:owners => {user_id: params[:user_id]})
+    else
+      @projects = Project.all
+    end
   end
 
   # GET /projects/1
   # GET /projects/1.json
   def show
+  end
+
+  helper_method :averageRating
+  def averageRating
+      rating = 0.0
+      @project.projectvotes.each do |vote|
+          rating += vote.rating
+      end
+      rating / @project.projectvotes.count
   end
 
   # GET /projects/new
@@ -26,6 +40,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
+    @project.owners.new(user: current_user)
 
     respond_to do |format|
       if @project.save
@@ -70,6 +85,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:description, :video_link)
+      params.require(:project).permit(:description, :video_link, :title, :content)
     end
 end

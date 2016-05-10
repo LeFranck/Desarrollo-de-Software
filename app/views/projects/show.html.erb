@@ -1,14 +1,70 @@
-<p id="notice"><%= notice %></p>
+<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+<div class="container col-sm-2">
+</div>
+<div class="container col-sm-8 project-content">
+    <div class="row page-header">
+        <div class="col-sm-1 votes">
+            <a href="#AgregarComentario">
+                <div class="vote negative" id="ComentarBtn">
+                    <i class="fa fa-comment">
+                    </i>
+                </div>
+            </a>
+            <div class="vote edit">
+                <%= link_to '', edit_project_path(@project), class: 'fa fa-wrench' %>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <h1 class="blog-title">
+                <%= @project.title %>
+                <%= render 'stars' %>
+            </h1>
+            <p class="lead blog-description">
+            <%= @project.description %>
+            </p>
+            <p class="blog-meta">
+            <% @project.users.each do |user| %>
+                <%= user.username %>,
+            <% end %>
+        </p>
+        <p class="blog-meta">
+        Fecha creacion: <%= @project.created_at.strftime("%d %b %Y")%>
+    </p>
+        </div>
+    </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+    <div class="row">
+        <ul class="nav nav-tabs" id="tabs">
+            <li class="active">
+                <a href="#Content" data-toggle="tab">Content</a>
+            </li>
+            <li>
+                <a href="#Comentarios" data-toggle="tab">Comentarios</a>
+            </li>
+        </ul>
+    </div>
 
-<p>
-  <strong>Video link:</strong>
-  <%= @project.video_link %>
-</p>
+    <div class="row">
+        <section class="tab-content">
+            <article class="tab-pane active" id="Content">
+                <h3>Content</h3>
+                <p>
+                    CONTENT GOES HERE
+                </p>
+            </article>
+            <article class="tab-pane" id="Comentarios">
+                <%= render "listComments" %>
+                <%= render "addComment" %>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+            </article>
+        </section>
+    </div>
+    <div class="row footer">
+        <%= link_to 'Volver', projects_path %>
+    </div>
+</div>
+<div class="container col-sm-12">
+    <% debug(@project) %>
+</div>
+
+

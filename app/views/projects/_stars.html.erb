@@ -1,0 +1,20 @@
+<div class="starvotes" id="starvotes">
+    <% averageRating.round(1) %>
+    <% if not averageRating.nan? %>
+        <%= number_with_precision(averageRating.round(1), :precision => 1, :separator => ',') %>
+    <% end %>
+    <% n = averageRating %>
+
+    <% for i in 1..5 %>
+        <% i = 0 %>
+        <% if n > 1 %>
+            <i class="star-1 fa fa-star starvote fa-fw"></i>
+            <% n -= 1 %>
+        <% elsif (n > 0) && (n < 1) %>
+            <i class="star-1 fa fa-star-half-o starvote fa-fw"></i>
+            <% n -= 1 %>
+        <% else %>
+            <i class="star-1 fa fa-star-o starvote fa-fw"></i>
+        <% end %>
+    <% end %>
+</div>
