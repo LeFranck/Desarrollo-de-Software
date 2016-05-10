@@ -17,38 +17,7 @@
         <div class="col-sm-9">
             <h1 class="blog-title">
                 <%= @project.title %>
-                <div class="starvotes" id="starvotes">
-
-                    <!--
-                <%= form_for([@project]) do |f| %>
-                  <div class="field">
-                      <%= f.hidden_field :rating, :value => 4 %><br>
-                  </div>
-                  <div class="actions">
-                    <%= f.submit %>
-                  </div>
-                <% end %>
-                    -->
-
-                <% averageRating.round(1) %>
-                <%= number_with_precision(averageRating.round(1), :precision => 1, :separator => ',') %>
-                <% n = averageRating %>
-
-                <% for i in 1..5 %>
-                    <% i = 0 %>
-                    <% if n > 1 %>
-                        <i class="star-1 fa fa-star starvote fa-fw"></i>
-                        <% n -= 1 %>
-                    <% elsif (n > 0) && (n < 1) %>
-                        <i class="star-1 fa fa-star-half-o starvote fa-fw"></i>
-                        <% n -= 1 %>
-                    <% else %>
-                        <i class="star-1 fa fa-star-o starvote fa-fw"></i>
-                    <% end %>
-                <% end %>
-
-
-                </div>
+                <%= render 'stars' %>
             </h1>
             <p class="lead blog-description">
             <%= @project.description %>
@@ -84,60 +53,9 @@
                 </p>
             </article>
             <article class="tab-pane" id="Comentarios">
-                <div class="container">
-                    <div class="row">
-                        <h3 id="AgregarComentario">Agregar Comentario</h3>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="widget-area no-padding blank">
-                                <div class="status-upload">
-                                    <form>
-                                        <textarea placeholder="Escribe tu comentario en este espacio..." ></textarea>
-                                        <button type="submit" 
-                                            class="btn btn-success btn">
-                                            <i class="fa fa-share"></i>Agregar
-                                        </button>
+                <%= render "listComments" %>
+                <%= render "addComment" %>
 
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="page-header">
-                                <h1>
-                                    <small class="pull-right">
-                                        <%= @project.comments.count %>
-                                    comentarios</small>
-                                    Comentarios
-                                </h1>
-                            </div> 
-                            <div class="comments-list">
-                                <% @project.comments.each do |comment| %>
-                                <div class="media">
-                                    <p class="pull-right"><small>
-                                    <%= comment.created_at.strftime("%d %b %Y, %H:%M") %></small></p>
-                                    <a class="media-left" href="#">
-                                        <%#/* Agregar aqui imagen del usuario */%>
-                                        <%#<img src="http://lorempixel.com/40/40/people/1/">%>
-                                    </a>
-                                    <div class="media-body">
-                                        <h4 class="media-heading user_name">
-                                            <%= comment.user.username %>
-                                        </h4>
-                                        <%= comment.content %>
-                                    </div>
-                                </div>
-                                <% end %>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </article>
         </section>
     </div>
