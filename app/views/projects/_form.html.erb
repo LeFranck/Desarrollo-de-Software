@@ -32,7 +32,7 @@
 
   <div class="field">
     <%= f.label :categoría %><br />
-    <%= f.collection_select :category_id, Category.all, :id, :name %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, {},:class => "category-dropdown" %>
   </div>
 
   <div class="actions">
