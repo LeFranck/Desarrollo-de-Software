@@ -3,7 +3,12 @@
 <div class="container col-sm-2">
 </div>
 <div class="container col-sm-8 project-content">
-    <div class="row page-header">
+    <div class="row">
+            <h1 style="margin:0px">
+            <%= @project.category.name %>
+            </h1>
+    </div>
+    <div class="row page-header" style="margin-top:0px">
         <div class="col-sm-1 votes">
             <a href="#AgregarComentario">
                 <div class="vote negative" id="ComentarBtn">
