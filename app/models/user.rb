@@ -15,4 +15,7 @@ class User < ActiveRecord::Base
 
   has_many :commentvotes
   has_many :comments, :through => :commentvotes
+
+  ##Validaciones
+  validates :username, presence: true, uniqueness: true
 end
