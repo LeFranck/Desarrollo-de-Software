@@ -52,8 +52,9 @@
                     </div>
                 </div>
                 <div class="panel-footer">
-                        <a data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-edit"> Editar</i></a>
-                        <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"> Eliminar</i></a>
+                <%= link_to 'Editar', edit_project_path(@user), class: 'btn btn-warning' %>
+                <%= link_to 'Eliminar', edit_project_path(@user), class: 'btn btn-danger' %>
+                <%= link_to 'Ver proyectos', edit_project_path(@user), class: 'btn btn-primary' %>
                 </div>
 
             </div>
