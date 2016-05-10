@@ -1,4 +1,5 @@
-$(document).ready(function() {
+function ratingStars() {
+    setTimeout( function () {
     $('.starvote').hover(function () {
         $(this).siblings().addClass('star-inactive');
         $(this).prevAll().addClass('star-active');
@@ -11,4 +12,7 @@ $(document).ready(function() {
         $('#tabs a[href="#Comentarios"]').tab('show');
         $('#comment_box').focus();
     });
-});
+    },200);
+    console.log('dentro');
+}
+console.log('fuera');

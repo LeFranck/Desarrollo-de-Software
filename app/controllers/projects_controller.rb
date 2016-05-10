@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
   def averageRating
       rating = 0.0
       @project.projectvotes.each do |vote|
-          rating += vote.rating
+          rating += vote.rating.to_f
       end
       rating / @project.projectvotes.count
   end

@@ -6,16 +6,30 @@
     <% n = averageRating %>
 
     <% for i in 1..5 %>
-        <% i = 0 %>
         <% if n >= 1 %>
-            <i class="star-1 fa fa-star starvote fa-fw"></i>
+            <% star_class = "fa fa-star starvote fa-fw" %>
             <% n -= 1 %>
         <% elsif (n > 0) && (n < 1) %>
-            <i class="star-1 fa fa-star-half-o starvote fa-fw"></i>
+            <% star_class = "fa fa-star-half-o starvote fa-fw" %>
             <% n -= 1 %>
         <% else %>
-            <i class="star-1 fa fa-star-o starvote fa-fw"></i>
+            <% star_class = "fa fa-star-o starvote fa-fw" %>
         <% end %>
+
+        <div style="display:inline-block" class="starvote">
+        <%= form_for([@project, @project.projectvotes.build]) do |f| %>
+            <div class="field">
+                <%= f.hidden_field :rating, :value => (i) %>
+            </div>
+            <%= button_tag(type: 'submit', class: "submit-star") do %>
+                <% html_icon = "<i class=\""+star_class+"\"></i>" %>
+                <%= html_icon.html_safe %>
+             <% end %>
+        <% end %>
+        </div>
+
     <% end %>
+    
+
 
 </div>
