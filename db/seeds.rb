@@ -7,20 +7,20 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Project.create({
-    "title"=>"ej1", 
-    "video_link"=>"http://www.youtube.com/", 
+    "title"=>"ej1",
+    "video_link"=>"http://www.youtube.com/",
     "description"=>"Breve descripcion de un proyecto...",
     "category_id"=>"1"
 })
 Project.create({
-    "title"=>"ej2", 
-    "video_link"=>"http://www.youtube.com/", 
+    "title"=>"ej2",
+    "video_link"=>"http://www.youtube.com/",
     "description"=>"Breve descripcion de un proyecto...2",
     "category_id"=>"2"
 })
 Project.create({
-    "title"=>"ej3", 
-    "video_link"=>"http://www.youtube.com/", 
+    "title"=>"ej3",
+    "video_link"=>"http://www.youtube.com/",
     "description"=>"Breve descripcion de un proyecto...3",
     "category_id"=>"1"
 })
@@ -29,7 +29,7 @@ User.create({
     "firstname"=>"Albert",
     "lastname"=>"Einstein",
     "password"=>"123456",
-    "birthday"=>"1879-03-14",
+    "birthdate"=>"1879-03-14",
     "email"=>"aeinstein@example.com",
 })
 User.create({
@@ -37,7 +37,7 @@ User.create({
     "firstname"=>"Isaac",
     "lastname"=>"Newton",
     "password"=>"123456",
-    "birthday"=>"1652-01-04",
+    "birthdate"=>"1652-01-04",
     "email"=>"inewton@example.com",
 })
 Category.create({

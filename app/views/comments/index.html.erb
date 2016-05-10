@@ -16,7 +16,7 @@
         <td><%= comment.content %></td>
         <td><%= link_to 'Show', project_comment_path(@project, comment) %></td>
         <td><%= link_to 'Edit', edit_project_comment_path(@project, comment) %></td>
-        <td><%= link_to 'Destroy', [@project, @comment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', project_comment_path(@project, comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
