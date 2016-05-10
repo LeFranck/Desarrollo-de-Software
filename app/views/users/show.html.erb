@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
     <div class="row">
-        <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
-            <p class=" text-info">May 05,2014,03:00 pm </p>
-        </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
 
 
@@ -38,10 +35,6 @@
                                         </tr>
                                         <tr>
                                             <tr>
-                                                <td>Gender</td>
-                                                <td>Male</td>
-                                            </tr>
-                                            <tr>
                                                 <td>Email</td>
                                                 <td><a href="mailto:<%=@user.email %>"><%=@user.email %></a></td>
                                         </tr>
@@ -52,9 +45,10 @@
                     </div>
                 </div>
                 <div class="panel-footer">
-                <%= link_to 'Editar', edit_project_path(@user), class: 'btn btn-warning' %>
-                <%= link_to 'Eliminar', edit_project_path(@user), class: 'btn btn-danger' %>
-                <%= link_to 'Ver proyectos', edit_project_path(@user), class: 'btn btn-primary' %>
+                <%= link_to 'Editar', edit_user_registration_path(@user), class: 'btn btn-warning' %>
+                <%# link_to 'Eliminar', (@user), class: 'btn btn-danger' %>
+                <%# link_to 'Eliminar', user, method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-danger btn-block front-page-btn' %>
+                <%= link_to 'Ver proyectos', user_projects_path(@user), class: 'btn btn-primary' %>
                 </div>
 
             </div>
