@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create({
-    "username"=>"EisteinCyborg",
+    "username"=>"RelativeEinstein",
     "firstname"=>"Albert",
     "lastname"=>"Einstein",
     "password"=>"123456",
@@ -173,4 +173,16 @@ Project.create({
     velit. Cras ut nisi vel sem interdum pretium sit amet sed enim. Donec
     suscipit fringilla nisi, sed sagittis augue placerat in. Donec tincidunt
     vehicula elementum."
+})
+Owner.create({
+    "project_id"=>"1",
+    "user_id"=>"2",
+})
+Owner.create({
+    "project_id"=>"2",
+    "user_id"=>"2",
+})
+Owner.create({
+    "project_id"=>"3",
+    "user_id"=>"1",
 })

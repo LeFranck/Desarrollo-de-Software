@@ -20,18 +20,9 @@
         <div class="navbar-collapse collapse sidebar-navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Todos</a></li>
-            <li><a href="#">Lenguaje</a></li>
-            <li><a href="#">Matemáticas</a></li>
-            <li><a href="#">Ciencias Naturales</a></li>
-            <li><a href="#">Física</a></li>
-            <li><a href="#">Química</a></li>
-            <li><a href="#">Biología</a></li>
-            <li><a href="#">Computación</a></li>
-            <li><a href="#">Ciencias Sociales</a></li>
-            <li><a href="#">Arte</a></li>
-            <li><a href="#">Música</a></li>
-            <li><a href="#">Deportes</a></li>
-            <li><a href="#">Otros</a></li>
+              <% Category.all.each do |category| %>
+                  <li><a href="#"><%= category.name %></a></li>
+              <% end %>
           </ul>
         </div>
       </div>
@@ -48,6 +39,9 @@
               </a>
             </div>
             <div class="media-body">
+              <h4 class="media-heading">
+                <%= 'Categoria: ' + project.category.name %>
+              </h4>
               <h3 class="media-heading">
                 <%= project.title %>
               </h3>
@@ -55,9 +49,13 @@
               <div class="media">
                 <div class="media.heading">
                   <% project.owners.each do |owner| %>
-                  <%= owner.user.username %>
+                      <p>
+                        <%= "Creador: " + owner.user.username %>
+                      </p>
                   <%end%>
                 </div>
+              </div>
+              <div class="media">
               </div>
             </div>
             <div class="media-right">
