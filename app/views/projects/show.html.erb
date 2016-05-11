@@ -1,3 +1,7 @@
+<% if (notice) %>
+<% temp = "<script>toastr.warning(notice)</script>" %>
+<%= temp.html_safe %>
+<% end %>
 <p id="notice"><%= notice %></p>
 <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
 <div class="container" id="vista_proyecto">
@@ -53,7 +57,7 @@
     <div class="row">
         <ul class="nav nav-tabs" id="tabs">
             <li class="active">
-                <a href="#Content" data-toggle="tab">Content</a>
+                <a href="#Content" data-toggle="tab">Contenido</a>
             </li>
             <li>
                 <a href="#Comentarios" data-toggle="tab">Comentarios</a>
@@ -64,7 +68,7 @@
     <div class="row">
         <section class="tab-content">
             <article class="tab-pane active" id="Content">
-                <h3>Content</h3>
+                <h3>Contenido</h3>
                 <p>
                 <%= @project.content %>
                 </p>

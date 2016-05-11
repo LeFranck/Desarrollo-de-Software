@@ -92,11 +92,11 @@ class ProjectsController < ApplicationController
     def validate_owner
       if !(@project.owners.exists?(:user_id => current_user.id))
         if params[:user_id] && params[:id]
-          redirect_to user_project_path(User.find(params[:user_id]), Project.find(params[:id])), notice: 'Access Denied'
+          redirect_to user_project_path(User.find(params[:user_id]), Project.find(params[:id])), notice: 'Access No Permitido'
         elsif params[:id]
-          redirect_to project_path(Project.find(params[:id])), notice: 'Access Denied'
+          redirect_to project_path(Project.find(params[:id])), notice: 'Access No Permitido'
         else
-          redirect_to projects_path, notice: 'Access Denied'
+          redirect_to projects_path, notice: 'Access No Permitido'
         end
       else
         true
