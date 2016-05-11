@@ -15,4 +15,7 @@ class Project < ActiveRecord::Base
 
   has_many :comments
   has_many :users, :through => :comments
+
+  ##Validaciones
+  validates :title, :description, :category_id, presence: true
 end

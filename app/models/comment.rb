@@ -5,4 +5,7 @@ class Comment < ActiveRecord::Base
 
   has_many :commentvotes
   has_many :users, :through => :commentvotes
+
+  ##Validaciones
+  validates :content, presence: true
 end
