@@ -1,8 +1,9 @@
 <% if (notice) %>
-<% temp = "<script>toastr.warning(notice)</script>" %>
+<% temp = "<script>toastr.info(\""+notice+"\")</script>" %>
 <%= temp.html_safe %>
 <% end %>
-<p id="notice"><%= notice %></p>
+
+
 <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
 <div class="container" id="vista_proyecto">
 <div class="container col-sm-2">
