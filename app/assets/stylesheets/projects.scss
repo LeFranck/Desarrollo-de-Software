@@ -58,7 +58,8 @@
 $yes : #4ab79a;
 $no : #EE5E91;
 $star : #ffcc00;
-$edit : #337ab7;
+$edit : #f0ad4e;
+$comment : #4ab79a;
 .footer {
     margin-bottom:30px;
 }
@@ -66,7 +67,6 @@ $edit : #337ab7;
 
 .edit {
     color:$edit;
-    text-decoration:none !important;
 }
 .vote {
     font-size:50px;
@@ -93,9 +93,9 @@ $edit : #337ab7;
     }
 }
 .vote.negative {
-    color:$no;
+    color:$comment;
     &:hover {
-        color:darken($no,10%);
+        color:darken($comment,10%);
     }
 }
 .votes {
