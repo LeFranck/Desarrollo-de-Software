@@ -1,7 +1,13 @@
 <%= stylesheet_link_tag "projects.css" %>
 
 <div class="panel panel-default">
-<h2>Inscribir Nuevo Proyecto</h2>
+<h2>
+  <% if @project.id %>
+    Editar Proyecto
+  <% else %>
+    Inscribir Nuevo Proyecto
+  <% end %>
+</h2>
 <%= form_for(@project) do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
