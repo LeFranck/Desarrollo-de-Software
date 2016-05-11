@@ -3,6 +3,7 @@ class ProjectvotesController < ApplicationController
   before_action :set_project
   before_action :set_projectvote, only: [:show, :edit, :update, :destroy]
   before_action :validate_owner, only: [:edit, :update, :destroy]
+  before_action :check_duplicate, only: :create
 
   # GET /projectvotes
   # GET /projectvotes.json
@@ -32,7 +33,7 @@ class ProjectvotesController < ApplicationController
 
     respond_to do |format|
       if @projectvote.save
-        format.html { redirect_to @project, notice: 'Projectvote was successfully created.' }
+        format.html { redirect_to @project }
         format.json { render :show, status: :created, location: @projectvote }
       else
         format.html { render :new }
@@ -89,6 +90,12 @@ class ProjectvotesController < ApplicationController
         end
       else
         true
+      end
+    end
+
+    def check_duplicate
+      if @project.projectvotes.exists?(:user_id => current_user.id)
+        redirect_to @project, notice: 'Already voted'
       end
     end
 end
