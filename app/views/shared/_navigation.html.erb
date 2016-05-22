@@ -28,11 +28,15 @@
         </div>
         <ul class="nav navbar-nav navbar-right">
             <% if current_user %>
-              <li><%= link_to(current_user.email, user_path(current_user)) %></li>
-              <li><%= link_to "log out", destroy_user_session_path, :method => :delete %></li>
+                <li>
+                    <%= link_to("<span class=\"glyphicon glyphicon-user\"></span> ".html_safe + current_user.email, user_path(current_user)) %>
+                </li>
+                <li>
+                    <%= link_to "<span class=\"glyphicon glyphicon-log-out\"></span> log out".html_safe, destroy_user_session_path, :method => :delete %>
+            </li>
             <% else %>
-              <li><%= link_to "log in", new_user_session_path %></li>
-              <li><%= link_to "register", new_user_registration_path %></li>
+                <li><%= link_to "<span class=\"glyphicon glyphicon-log-in\"></span> Log in".html_safe, new_user_session_path %></li>
+              <li><%= link_to "<span class=\"glyphicon glyphicon-user\"></span> Registrar".html_safe, new_user_registration_path %></li>
             <% end %>
         </ul>
     </div><!-- /.navbar-collapse -->
