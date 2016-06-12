@@ -18,4 +18,12 @@ class Project < ActiveRecord::Base
 
   ##Validaciones
   validates :title, :description, :category_id, presence: true
+
+  def self.search(search)
+    if search
+      where(['LOWER(title) LIKE LOWER(?)', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
 end

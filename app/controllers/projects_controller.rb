@@ -9,6 +9,8 @@ class ProjectsController < ApplicationController
   def index
     if params[:user_id]
       @projects = Project.joins("LEFT JOIN owners ON owners.project_id = projects.id").where(:owners => {user_id: params[:user_id]})
+    elsif params[:q]
+      @projects = Project.search(params[:q])
     else
       @projects = Project.all
     end
