@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  include PgSearch
+
   has_many :owners
   has_many :projects, :through => :owners
 
@@ -18,4 +20,17 @@ class User < ActiveRecord::Base
 
   ##Validaciones
   validates :username, presence: true, uniqueness: true
+
+  pg_search_scope :search, :against => {
+    :username => 'A',
+    :email => 'A',
+    :firstname => 'B',
+    :lastname => 'B'
+  }, :ignoring => :accents,
+  :using => {
+    :tsearch => {:any_word => true},
+    :trigram => {
+      :threshold => 0.1
+    }
+  }
 end
