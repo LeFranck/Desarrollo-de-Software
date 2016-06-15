@@ -1,14 +1,92 @@
-<p id="notice"><%= notice %></p>
+<% if (notice) %>
+<% temp = "<script>toastr.info(\""+notice+"\")</script>" %>
+<%= temp.html_safe %>
+<% end %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
 
-<p>
-  <strong>Video link:</strong>
-  <%= @project.video_link %>
-</p>
+<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+<div class="container" id="vista_proyecto">
+<div class="container col-sm-2">
+</div>
+<div class="container col-sm-8 project-content">
+        <div class="row">
+            <h2 style="margin:0px">
+                <%= 'Categoria: ' + @project.category.name %>
+            </h2>
+        </div>
+    <div class="row page-header" style="margin-top:0px">
+        <div class="col-sm-1 votes">
+            <a href="#AgregarComentario">
+                <div class="vote negative" id="ComentarBtn">
+                    <i class="fa fa-comment">
+                    </i>
+                </div>
+            </a>
+            <div class="vote edit" style="text-decoration:none">
+                <%= link_to '', edit_project_path(@project), class: 'fa fa-wrench edit', style:"text-decoration:none;"%>
+            </div>
+        </div>
+        <div class="col-sm-11">
+            <h1 class="blog-title">
+                <%= @project.title? ? @project.title : "Sin titulo"  %>
+                <%= render 'stars' %>
+                <script>ratingStars()</script>
+            </h1>
+            <p class="lead blog-description">
+            <%= @project.description %>
+            </p>
+            <p class="blog-meta">
+                <p>
+            <% @project.users.each do |user| %>
+                <% user.username %>
+            <% end %>
+                </p>
+                <p>
+            <% @project.owners.each do |owner| %>
+                <p>
+                <%= "Creador: " + owner.user.username %>
+                </p>
+            <% end %>
+                </p>
+        </p>
+        <p class="blog-meta">
+        Fecha creacion: <%= @project.created_at.strftime("%d %b %Y")%>
+    </p>
+        </div>
+    </div>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+    <div class="row">
+        <ul class="nav nav-tabs" id="tabs">
+            <li class="active">
+                <a href="#Content" data-toggle="tab">Contenido</a>
+            </li>
+            <li>
+                <a href="#Comentarios" data-toggle="tab">Comentarios</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="row">
+        <section class="tab-content">
+            <article class="tab-pane active" id="Content">
+                <h3>Contenido</h3>
+                <p>
+                <%= @project.content %>
+                </p>
+            </article>
+            <article class="tab-pane" id="Comentarios">
+                <%= render "listComments" %>
+                <%= render "addComment" %>
+
+            </article>
+        </section>
+    </div>
+    <div class="row footer">
+        <%= link_to 'Volver', projects_path, class: "btn btn-primary" %>
+    </div>
+</div>
+<div class="container col-sm-12">
+    <% debug(@project) %>
+</div>
+</div>
+</div>

@@ -1,0 +1,35 @@
+<div class="starvotes" id="starvotes">
+    <% averageRating.round(1) %>
+    <% if not averageRating.nan? %>
+        <%= number_with_precision(averageRating.round(1), :precision => 1, :separator => ',') %>
+    <% end %>
+    <% n = averageRating %>
+
+    <% for i in 1..5 %>
+        <% if n >= 1 %>
+            <% star_class = "fa fa-star starvote fa-fw" %>
+            <% n -= 1 %>
+        <% elsif (n > 0) && (n < 1) %>
+            <% star_class = "fa fa-star-half-o starvote fa-fw" %>
+            <% n -= 1 %>
+        <% else %>
+            <% star_class = "fa fa-star-o starvote fa-fw" %>
+        <% end %>
+
+        <div style="display:inline-block" class="starvote">
+        <%= form_for([@project, @project.projectvotes.build]) do |f| %>
+            <div class="field">
+                <%= f.hidden_field :rating, :value => (i) %>
+            </div>
+            <%= button_tag(type: 'submit', class: "submit-star") do %>
+                <% html_icon = "<i class=\""+star_class+"\"></i>" %>
+                <%= html_icon.html_safe %>
+             <% end %>
+        <% end %>
+        </div>
+
+    <% end %>
+    
+
+
+</div>

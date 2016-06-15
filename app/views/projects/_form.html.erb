@@ -1,3 +1,13 @@
+<%= stylesheet_link_tag "projects.css" %>
+
+<div class="panel panel-default">
+<h2>
+  <% if @project.id %>
+    Editar Proyecto
+  <% else %>
+    Inscribir Nuevo Proyecto
+  <% end %>
+</h2>
 <%= form_for(@project) do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
@@ -12,14 +22,32 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.label :titulo %><br />
+    <%= f.text_field :title %>
   </div>
+
   <div class="field">
-    <%= f.label :video_link %><br>
+    <%= f.label :descripción %><br />
+    <%= f.text_area :description, :class => "text-area" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Contenido %><br />
+    <%= f.text_area :content, :class => "text-area" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :video_link %><br />
     <%= f.text_field :video_link %>
   </div>
+
+  <div class="field">
+    <%= f.label :categoría %><br />
+    <%= f.collection_select :category_id, Category.all, :id, :name, {},:class => "category-dropdown" %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+</div>
 <% end %>

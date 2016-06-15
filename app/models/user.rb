@@ -21,7 +21,11 @@ class User < ActiveRecord::Base
   styles: {thumb: ["64x64#", :jpg], original: ['500x500>', :jpg] },
   convert_options: { thumb: "-quality 75 -strip", original: "-quality 85 -strip" }
 
+  ##Validaciones
   validates_attachment :avatar,
   :content_type => { :content_type => ["image/jpg", "image/png"] },
   :size => { :in => 0..2.megabytes }
+
+  validates :username, presence: true, uniqueness: true
+
 end

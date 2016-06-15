@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :validate_owner, only: [:edit, :update, :destroy]
+
 
   # GET /projects
   # GET /projects.json
@@ -15,6 +17,15 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+  end
+
+  helper_method :averageRating
+  def averageRating
+      rating = 0.0
+      @project.projectvotes.each do |vote|
+          rating += vote.rating.to_f
+      end
+      rating / @project.projectvotes.count
   end
 
   # GET /projects/new
@@ -75,6 +86,20 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:description, :video_link)
+      params.require(:project).permit(:description, :video_link, :title, :content, :category_id)
+    end
+
+    def validate_owner
+      if !(@project.owners.exists?(:user_id => current_user.id))
+        if params[:user_id] && params[:id]
+          redirect_to user_project_path(User.find(params[:user_id]), Project.find(params[:id])), notice: 'Access No Permitido'
+        elsif params[:id]
+          redirect_to project_path(Project.find(params[:id])), notice: 'Access No Permitido'
+        else
+          redirect_to projects_path, notice: 'Access No Permitido'
+        end
+      else
+        true
+      end
     end
 end

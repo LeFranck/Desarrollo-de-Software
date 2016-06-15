@@ -2,6 +2,8 @@ class ProjectvotesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_project
   before_action :set_projectvote, only: [:show, :edit, :update, :destroy]
+  before_action :validate_owner, only: [:edit, :update, :destroy]
+  before_action :check_duplicate, only: :create
 
   # GET /projectvotes
   # GET /projectvotes.json
@@ -31,7 +33,7 @@ class ProjectvotesController < ApplicationController
 
     respond_to do |format|
       if @projectvote.save
-        format.html { redirect_to [@project, @projectvote], notice: 'Projectvote was successfully created.' }
+        format.html { redirect_to @project }
         format.json { render :show, status: :created, location: @projectvote }
       else
         format.html { render :new }
@@ -45,7 +47,7 @@ class ProjectvotesController < ApplicationController
   def update
     respond_to do |format|
       if @projectvote.update(projectvote_params)
-        format.html { redirect_to project_projectvotes_path(@project), notice: 'Projectvote was successfully updated.' }
+        format.html { redirect_to @project, notice: 'Projectvote was successfully updated.' }
         format.json { render :show, status: :ok, location: @projectvote }
       else
         format.html { render :edit }
@@ -59,7 +61,7 @@ class ProjectvotesController < ApplicationController
   def destroy
     @projectvote.destroy
     respond_to do |format|
-      format.html { redirect_to project_projectvotes_path(@project), notice: 'Projectvote was successfully destroyed.' }
+      format.html { redirect_to @project, notice: 'Projectvote was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -77,5 +79,23 @@ class ProjectvotesController < ApplicationController
 
     def set_project
       @project = Project.find(params[:project_id])
+    end
+
+    def validate_owner
+      if !(@projectvote.user_id == current_user.id)
+        if params[:project_id]
+          redirect_to project_path(Project.find(params[:project_id])), notice: 'Access Denied'
+        else
+          redirect_to projects_path, notice: 'Access Denied'
+        end
+      else
+        true
+      end
+    end
+
+    def check_duplicate
+      if @project.projectvotes.exists?(:user_id => current_user.id)
+        redirect_to @project, notice: 'Already voted'
+      end
     end
 end

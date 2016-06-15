@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="">
+            <h1>
+                <small class="pull-right">
+                    <%= @project.comments.count %>
+                    <%= @project.comments.count == 1 ? 'Comentario' : 'Comentarios' %>
+                </small>
+            </h1>
+        </div> 
+    </div>
+</div>
+<div class="row">
+    <div class="comments-list">
+        <% @project.comments.reverse_each do |comment| %>
+            <div class="media">
+                <p class="pull-right"><small>
+                    <%= comment.created_at.strftime("%d %b %Y, %H:%M") %></small></p>
+                <a class="media-left" href="#">
+                    <%#/* Agregar aqui imagen del usuario */%>
+                    <%#<img src="http://lorempixel.com/40/40/people/1/">%>
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading user_name">
+                        <%= comment.user.username %>
+                    </h4>
+                    <%= comment.content %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

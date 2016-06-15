@@ -1,6 +1,12 @@
-<h1>Editing Project</h1>
+<script>$('body').ready(function(){$('body').css({'background-color':'#ccc'})});</script>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>
+    <div class="col-sm-5">
+    </div>
+<div class="row">
+    <div class="col-sm-2">
+<%= link_to 'Ver proyecto', @project, :class =>'btn btn-primary' %>
+<%= link_to 'Lista proyectos', projects_path, :class => 'btn btn-primary' %>
+    </div>
+</div>
