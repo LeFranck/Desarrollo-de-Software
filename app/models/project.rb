@@ -23,10 +23,19 @@ class Project < ActiveRecord::Base
 
   pg_search_scope :tag_search, :associated_against => {
     :tags => :name
-  }, :ignoring => :accents
+  }, :ignoring => :accents,
+  :using => {
+    :tsearch => {:any_word => true}
+  }
 
   pg_search_scope :search, :against => {
     :title => 'A',
     :description => 'B'
-  }, :ignoring => :accents
+  }, :ignoring => :accents,
+  :using => {
+    :tsearch => {:any_word => true},
+    :trigram => {
+      :only => :title
+    }
+  }
 end
