@@ -9,7 +9,7 @@ gem 'pg'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 #Paperclip
-gem "paperclip", "~> 4.3.6"
+gem 'paperclip', '~> 4.3.6'
 
 gem 'bootstrap-datepicker-rails'
 
