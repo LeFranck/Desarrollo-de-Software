@@ -27,7 +27,14 @@
         <div class="col-sm-11">
             <h1 class="blog-title">
                 <%= @project.title? ? @project.title : "Sin titulo"  %>
-                <%= render 'stars' %>
+                <% averageRating.round(1) %>
+                <% if not averageRating.nan? %>
+                    <%= number_with_precision(averageRating.round(1), :precision => 1, :separator => ',') %>
+                <% end %>
+                <% n = averageRating %>
+                <div id="stars_partial-div">
+                    <%= render partial: 'stars', locals: { n: averageRating} %>
+                </div>
                 <script>ratingStars()</script>
             </h1>
             <p class="lead blog-description">

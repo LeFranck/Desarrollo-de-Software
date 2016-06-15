@@ -1,10 +1,4 @@
 <div class="starvotes" id="starvotes">
-    <% averageRating.round(1) %>
-    <% if not averageRating.nan? %>
-        <%= number_with_precision(averageRating.round(1), :precision => 1, :separator => ',') %>
-    <% end %>
-    <% n = averageRating %>
-
     <% for i in 1..5 %>
         <% if n >= 1 %>
             <% star_class = "fa fa-star starvote fa-fw" %>
@@ -17,7 +11,7 @@
         <% end %>
 
         <div style="display:inline-block" class="starvote">
-        <%= form_for([@project, @project.projectvotes.build]) do |f| %>
+        <%= form_for([@project, @project.projectvotes.build] ) do |f| %>
             <div class="field">
                 <%= f.hidden_field :rating, :value => (i) %>
             </div>
@@ -27,7 +21,6 @@
              <% end %>
         <% end %>
         </div>
-
     <% end %>
     
 
