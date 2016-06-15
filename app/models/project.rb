@@ -1,5 +1,7 @@
 class Project < ActiveRecord::Base
 
+  include PgSearch
+
   has_many :owners
   has_many :users, :through => :owners
 
@@ -19,11 +21,12 @@ class Project < ActiveRecord::Base
   ##Validaciones
   validates :title, :description, :category_id, presence: true
 
-  def self.search(search)
-    if search
-      where(['LOWER(title) LIKE LOWER(?)', "%#{search}%"])
-    else
-      find(:all)
-    end
-  end
+  pg_search_scope :tag_search, :associated_against => {
+    :tags => :name
+  }, :ignoring => :accents
+
+  pg_search_scope :search, :against => {
+    :title => 'A',
+    :description => 'B'
+  }, :ignoring => :accents
 end

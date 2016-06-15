@@ -5,6 +5,8 @@ gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+gem 'pg_search'
+
 #bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
 

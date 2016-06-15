@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: [:show, :index, :search]
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   before_action :validate_owner, only: [:edit, :update, :destroy]
 
@@ -9,8 +9,6 @@ class ProjectsController < ApplicationController
   def index
     if params[:user_id]
       @projects = Project.joins("LEFT JOIN owners ON owners.project_id = projects.id").where(:owners => {user_id: params[:user_id]})
-    elsif params[:q]
-      @projects = Project.search(params[:q])
     else
       @projects = Project.all
     end
@@ -78,6 +76,12 @@ class ProjectsController < ApplicationController
       format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def search
+    tag_results = Project.tag_search(params[:search])
+    text_results = Project.search(params[:search])
+    @projects = tag_results + text_results
   end
 
   private
