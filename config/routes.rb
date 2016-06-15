@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   get 'psearch' => 'projects#search'
+  get 'usearch' => 'users#search'
 
   devise_for :users, :skip => [:sessions]
   as :user do
