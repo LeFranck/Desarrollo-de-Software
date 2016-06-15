@@ -61,6 +61,9 @@
                 <a href="#Content" data-toggle="tab">Contenido</a>
             </li>
             <li>
+                <a href="#Video" data-toggle="tab">Video</a>
+            </li>
+            <li>
                 <a href="#Comentarios" data-toggle="tab">Comentarios</a>
             </li>
         </ul>
@@ -73,6 +76,11 @@
                 <p>
                 <%= @project.content %>
                 </p>
+            </article>
+            <article class="tab-pane" id="Video">
+                <div class="embed-container">  
+                  <%= embed(@project.video_link) %>  
+                </div>  
             </article>
             <article class="tab-pane" id="Comentarios">
                 <%= render "listComments" %>
