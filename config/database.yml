@@ -84,3 +84,4 @@ test:
 production:
   <<: *default
   database: desarrollo_de_software_production
+  password: <%= ENV['DESARROLLO_DE_SOFTWARE_DATABASE_PASSWORD'] %>
