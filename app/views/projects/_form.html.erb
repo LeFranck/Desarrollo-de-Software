@@ -50,9 +50,20 @@
     <%= f.label :categoría %><br />
     <%= f.collection_select :category_id, Category.all, :id, :name, {},:class => "category-dropdown" %>
   </div>
-
+  
   <div class="actions">
     <%= f.submit %>
   </div>
+
+  <div class= "field">
+  <%= nested_form_for @project do |p| %>
+    <%= p.fields_for :project_photos do |task_form| %>
+      <%= task_form.file_field :photo %>
+      <%= task_form.link_to_remove "Eliminar foto" %>
+    <% end %>
+    <p><%= p.link_to_add "Agregar foto", :project_photos %></p>
+  <% end %>
+  </div>
+  
 </div>
 <% end %>

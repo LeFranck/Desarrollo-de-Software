@@ -72,6 +72,9 @@
             <li>
                 <a href="#Comentarios" data-toggle="tab">Comentarios</a>
             </li>
+            <li>
+                <a href="#Imagenes" data-toggle="tab">Imagenes</a>
+            </li>
         </ul>
     </div>
 
@@ -91,7 +94,9 @@
             <article class="tab-pane" id="Comentarios">
                 <%= render "listComments" %>
                 <%= render "addComment" %>
-
+            </article>
+            <article class="tab-pane" id="Imagenes">
+                <%= render "listProjectPhoto" %>
             </article>
         </section>
     </div>

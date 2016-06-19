@@ -16,6 +16,9 @@ class Project < ActiveRecord::Base
   has_many :comments
   has_many :users, :through => :comments
 
+  has_many :project_photos
+  accepts_nested_attributes_for :project_photos , allow_destroy: true
+
   #Paperclip
   has_attached_file :avatar,
   styles: {thumb: ["128x128#", :jpg], original: ['500x500>', :jpg] },

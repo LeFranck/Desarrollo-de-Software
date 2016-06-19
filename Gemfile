@@ -35,6 +35,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 
+#Project Photos
+gem "nested_form"
+
+gem 'hermitage'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
