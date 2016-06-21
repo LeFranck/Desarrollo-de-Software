@@ -19,7 +19,7 @@
                 </div>
                 <div class="navbar-collapse collapse sidebar-navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Todos</a></li>
+                        <li><%= link_to :Todos, {:action => 'index', :category => 0}, :class => "active" , remote: true %></li>
                         <% Category.all.each do |category| %>
                             <% if category %>
                                 <li><%= link_to category.name, {:action => 'index', :category => category.id}, remote: true %></li>
@@ -35,9 +35,9 @@
             <%= link_to 'Nuevo Proyecto', new_project_path, :class => 'btn btn-success btn-block front-page-btn' %>
         <% end %>
         <h1>Proyectos</h1>
-        <ol id="proyectos", data-remote="true">
+        <div id="proyectos", data-remote="true">
           <%= render @projects %>
-        </ol>
+        </div>
     <br>
   </div>
 </div>

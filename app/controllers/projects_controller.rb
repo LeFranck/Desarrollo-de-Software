@@ -15,7 +15,11 @@ class ProjectsController < ApplicationController
           @projects = Project.all
         }
         format.js {
-          @projects = Project.where(:category_id => params[:category].to_i)
+          if (params[:category] == "0")
+            @projects = Project.all
+          else
+            @projects = Project.where(:category_id => params[:category].to_i)
+          end
         }
       end
     end
