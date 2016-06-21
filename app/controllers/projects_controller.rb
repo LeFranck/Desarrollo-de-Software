@@ -10,7 +10,13 @@ class ProjectsController < ApplicationController
     if params[:user_id]
       @projects = Project.joins("LEFT JOIN owners ON owners.project_id = projects.id").where(:owners => {user_id: params[:user_id]})
     else
-      @projects = Project.all
+      respond_to do |format|
+        format.html { @projects = Project.all }
+      #@projects = Project.all.where(:category_id => "2")
+        format.js {
+          @projects = Project.where(:category_id => params[:category].to_i)
+        }
+      end
     end
   end
 

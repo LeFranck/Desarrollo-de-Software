@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag "projects.css" %>
+    <%= stylesheet_link_tag "projects.css" %>
 <p id="notice"><%= notice %></p>
 <!-- TODO Paginar -->
 <!-- TODO incluir usuarios desde BD -->
@@ -22,7 +22,7 @@
                         <li class="active"><a href="#">Todos</a></li>
                         <% Category.all.each do |category| %>
                             <% if category %>
-                                <li><a href="#"><%= category.name %></a></li>
+                                <li><%= link_to category.name, {:action => 'index', :category => category.id}, remote: true %></li>
                             <% end %>
                         <% end %>
                     </ul>
@@ -64,7 +64,7 @@
                     </div>
                     <div class="media">
                     </div>
-            </div>
+                  </div>
             <div class="media-right">
               <%= link_to 'Ver', project, :class => 'btn btn-primary btn-block front-page-btn' %>
               <% if current_user && project.owners.exists?(:user_id => current_user.id) %>
