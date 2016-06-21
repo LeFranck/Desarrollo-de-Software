@@ -21,6 +21,11 @@
   height: 100%;
 }
 
+.avatar{
+  position:absolute;
+  right:0;
+}
+
 
 .front-page-btn {
     min-width:80px;
@@ -169,4 +174,26 @@ $comment : #4ab79a;
 .comments-list .media{
     border-bottom: 1px dotted #ccc;
 }
+}
+
+
+div.photo {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.photo:hover {
+    border: 1px solid #777;
+}
+
+div.photo photo {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
 }

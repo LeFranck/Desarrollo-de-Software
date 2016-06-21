@@ -17,8 +17,8 @@
         </div>
     <div class="row page-header" style="margin-top:0px">
 
-        <div class="col-sm-20 votes">
-           <%= image_tag image_path(@project.avatar), size: "128x128", alt: "Imagen no disponible", class: "img-circle img-responsive" %>
+        <div class="avatar">
+           <%= image_tag image_path(@project.avatar), size: "256x256", alt: "Imagen no disponible", class: "img-circle img-responsive" %>
         </div>
 
         <div class="col-sm-1 votes">
@@ -96,7 +96,7 @@
                 <%= render "addComment" %>
             </article>
             <article class="tab-pane" id="Imagenes">
-                <%= render "listProjectPhoto" %>
+                <%= render "listProjectPhoto"%>
             </article>
         </section>
     </div>
@@ -109,3 +109,5 @@
 </div>
 </div>
 </div>
+
+<script src="javascripts/gallerly.js"></script>

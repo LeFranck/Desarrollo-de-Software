@@ -39,7 +39,12 @@
             <div class="media">
                 <div class="media-left">
                     <a href="#">
-                        <%= image_tag image_path('open_book.png', size: "128x128", alt: "Imagen no disponible")%>
+                        <% if !project.avatar_file_name.nil? %>
+                            <%= image_tag image_path(project.avatar) , size: "128x128", alt: image_path('open_book.png') %>
+                        <% end %>
+                        <% if project.avatar_file_name.nil?%>
+                            <%= image_tag image_path('open_book.png' , size: "128x128", alt: "img missing" )%>
+                        <% end %>
                     </a>
                 </div>
                 <div class="media-body">

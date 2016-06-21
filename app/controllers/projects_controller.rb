@@ -17,6 +17,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @project_photos = ProjectPhoto.where(project_id: params[:id])
   end
 
   helper_method :averageRating
@@ -86,7 +87,7 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:description, :video_link, :title, :content, :category_id, :avatar, project_photos_attributes: [:id, :photo, :_destroy])
+      params.require(:project).permit(:description, :video_link, :title, :content, :category_id, :avatar, project_photos_attributes: [:id, :photo, :description, :_destroy])
     end
 
     def validate_owner

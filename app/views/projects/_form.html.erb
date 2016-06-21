@@ -59,6 +59,7 @@
   <%= nested_form_for @project do |p| %>
     <%= p.fields_for :project_photos do |task_form| %>
       <%= task_form.file_field :photo %>
+      <%= task_form.text_field :description %>
       <%= task_form.link_to_remove "Eliminar foto" %>
     <% end %>
     <p><%= p.link_to_add "Agregar foto", :project_photos %></p>
