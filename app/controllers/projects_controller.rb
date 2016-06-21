@@ -18,6 +18,7 @@ class ProjectsController < ApplicationController
           if (params[:category] == "0")
             @projects = Project.all
           else
+            @cat = params[:category]
             @projects = Project.where(:category_id => params[:category].to_i)
           end
         }
