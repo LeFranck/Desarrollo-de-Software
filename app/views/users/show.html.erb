@@ -46,9 +46,9 @@
                 </div>
                 <div class="panel-footer">
                 <%= link_to 'Editar', edit_user_registration_path(@user), class: 'btn btn-warning' %>
-                <%# link_to 'Eliminar', (@user), class: 'btn btn-danger' %>
+                <%= link_to 'Usuarios', users_path ,class: 'btn btn-info' %>
                 <%# link_to 'Eliminar', user, method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-danger btn-block front-page-btn' %>
-                <%= link_to 'Ver proyectos', user_projects_path(@user), class: 'btn btn-primary' %>
+                <%= link_to 'Proyectos', user_projects_path(@user), class: 'btn btn-primary' %>
                 </div>
 
             </div>

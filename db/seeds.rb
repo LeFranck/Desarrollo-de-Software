@@ -7,6 +7,86 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create({
+  "username"=> "cbishop0",
+  "firstname"=> "Carol",
+  "lastname"=>"Bishop",
+  "email"=> "cbishop0@printfriendly.com",
+  "password"=> "CoFF7DBfPJ",
+  "birthdate"=> "1989-07-26"
+})
+User.create({
+  "username"=> "sharper1",
+  "firstname"=> "Shirley",
+  "lastname"=>"Harper",
+  "email"=> "sharper1@t.co",
+  "password"=> "OPWup3kh",
+  "birthdate"=> "1997-12-24"
+})
+User.create({
+  "username"=> "lhoward2",
+  "firstname"=> "Lawrence",
+  "lastname"=>"Howard",
+  "email"=> "lhoward2@mapquest.com",
+  "password"=> "L6NLcFnjLeE",
+  "birthdate"=> "1983-09-20"
+})
+User.create({
+  "username"=> "sfoster3",
+  "firstname"=> "Sandra",
+  "lastname"=>"Foster",
+  "email"=> "sfoster3@tiny.cc",
+  "password"=> "eLKH4DwTWmX",
+  "birthdate"=> "1992-02-26"
+})
+User.create({
+  "username"=> "bporter4",
+  "firstname"=> "Betty",
+  "lastname"=>"Porter",
+  "email"=> "bporter4@cisco.com",
+  "password"=> "jptKdG",
+  "birthdate"=> "1988-03-28"
+})
+User.create({
+  "username"=> "cjackson5",
+  "firstname"=> "Charles",
+  "lastname"=>"Jackson",
+  "email"=> "cjackson5@chicagotribune.com",
+  "password"=> "dSauT1bfKTMC",
+  "birthdate"=> "1992-01-14"
+})
+User.create({
+  "username"=> "itucker6",
+  "firstname"=> "Irene",
+  "lastname"=>"Tucker",
+  "email"=> "itucker6@feedburner.com",
+  "password"=> "7i8RfFw",
+  "birthdate"=> "1997-07-08"
+})
+User.create({
+  "username"=> "rgreene7",
+  "firstname"=> "Ruby",
+  "lastname"=>"Greene",
+  "email"=> "rgreene7@cornell.edu",
+  "password"=> "cY71eB7fiU",
+  "birthdate"=> "1993-02-13"
+})
+User.create({
+  "username"=> "jwilliamson8",
+  "firstname"=> "Jonathan",
+  "lastname"=>"Williamson",
+  "email"=> "jwilliamson8@storify.com",
+  "password"=> "Dp31lZt9xl",
+  "birthdate"=> "1987-12-24"
+})
+User.create({
+  "username"=> "anelson9",
+  "firstname"=> "Albert",
+  "lastname"=> "Nelson",
+  "email"=> "anelson9@nature.com",
+  "password"=> "rgRaiEDpgUB",
+  "birthdate"=> "1999-04-23"
+})
+User.create({
     "username"=>"RelativeEinstein",
     "firstname"=>"Albert",
     "lastname"=>"Einstein",
