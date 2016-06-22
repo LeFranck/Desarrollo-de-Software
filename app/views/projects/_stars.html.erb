@@ -1,4 +1,7 @@
 <div class="starvotes" id="starvotes">
+    <div class="rating-number">
+        <%= number_with_precision(n.round(1), :precision => 1, :separator => ',') %>
+    </div>
     <% for i in 1..5 %>
         <% if n >= 1 %>
             <% star_class = "fa fa-star starvote fa-fw" %>
@@ -22,7 +25,4 @@
         <% end %>
         </div>
     <% end %>
-    
-
-
 </div>

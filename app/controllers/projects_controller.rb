@@ -89,16 +89,6 @@ class ProjectsController < ApplicationController
     @projects = tag_results + text_results
   end
 
-  def averageRating
-      rating = 0.0
-      @project.projectvotes.each do |vote|
-          rating += vote.rating.to_f
-      end
-      rating / @project.projectvotes.count
-  end
-  helper_method :averageRating
-
-
   def ranking
     @projects = Project.all.sort_by{|project| -project.average_rating}
   end

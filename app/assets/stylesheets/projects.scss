@@ -86,8 +86,14 @@ div.desc {
     min-width:80px;
 }
 
+.rating-number {
+    font-family: Helvetica, sans-serif;
+    font-size:30px;
+    display:inline;
+}
+
 .submit-star {
-    background-color:#f9f9f9;
+    background-color:inherit;
     border:none;
     display:inline-block;
     padding:0px;
@@ -278,6 +284,14 @@ body {
     margin-bottom: 3px;
     margin-top: 0;
 }
+
+.slide-rating {
+    font-size:20px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
 
 .slide-footer {
     position: absolute;

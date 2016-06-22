@@ -52,7 +52,7 @@ class Project < ActiveRecord::Base
   }
 
   def average_rating
-      self.projectvotes.average(:rating) or 0
+      self.projectvotes.average(:rating) or 0.0
   end
 
 end
