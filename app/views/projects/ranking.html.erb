@@ -10,6 +10,8 @@
         <div class="col-sm-1">
         </div>
         <div class="col-sm-10">
-    <%= render partial: "project" %>
+            <% @projects.each do |project| %>
+                <%= render partial: "project", :object => project %>
+            <% end %>
         </div>
     </div>
