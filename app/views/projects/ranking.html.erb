@@ -1,2 +1,73 @@
+    <div class="row">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-8">
+        <h1>Ranking de proyectos</h1>
+        </div>
+    </div>
 
-<div>Hello world</div>
+<% @projects.each do |project| -%>
+    <% rating = 0.0 %>
+    <% project.projectvotes.each do |vote| -%>
+        <% rating += vote.rating.to_f %>
+    <% end %>
+    <% count = project.projectvotes.count %>
+    <% if (count == 0) %>
+        <% rating = 0 %>
+    <% else %>
+        <% rating = rating / count %>
+    <% end %>
+    <div class="row">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-8">
+            <div id="proyectos", data-remote="true">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <% if !project.avatar_file_name.nil? %>
+                                <%= image_tag image_path(project.avatar) , size: "128x128", alt: image_path('open_book.png') %>
+                            <% end %>
+                            <% if project.avatar_file_name.nil?%>
+                                <%= image_tag image_path('open_book.png' , size: "128x128", alt: "img missing" )%>
+                            <% end %>
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <% if project.category %>
+                            <h4 class="media-heading">
+                                <%= 'Categoria: ' + project.category.name %>
+                            </h4>
+                        <% end %>
+                        <h3 class="media-heading">
+                        <%= project.title %>
+                        </h3>
+                        <h4 class="media-heading">
+                            <% if rating == 0 %>
+                                <%= "Sin votos" %>
+                            <% else %>
+                                <%= "Puntaje: " + rating.to_s %>
+                            <% end %>
+                            </h4>
+                                <p><%= project.description %></p>
+                                <div class="media">
+                                    <div class="media.heading">
+                                        <% project.owners.each do |owner| %>
+                                            <p>
+                                            <%= "Creador: " + owner.user.username %>
+                                            </p>
+                                        <%end%>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                </div>
+                    </div>
+                    <div class="media-right">
+                        <%= link_to 'Ver', project, :class => 'btn btn-primary btn-block front-page-btn' %>
+                    </div>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>

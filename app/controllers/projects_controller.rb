@@ -32,14 +32,6 @@ class ProjectsController < ApplicationController
     @project_photos = ProjectPhoto.where(project_id: params[:id])
   end
 
-  helper_method :averageRating
-  def averageRating
-      rating = 0.0
-      @project.projectvotes.each do |vote|
-          rating += vote.rating.to_f
-      end
-      rating / @project.projectvotes.count
-  end
 
   # GET /projects/new
   def new
@@ -95,6 +87,19 @@ class ProjectsController < ApplicationController
     tag_results = Project.tag_search(params[:search])
     text_results = Project.search(params[:search])
     @projects = tag_results + text_results
+  end
+
+  def averageRating
+      rating = 0.0
+      @project.projectvotes.each do |vote|
+          rating += vote.rating.to_f
+      end
+      rating / @project.projectvotes.count
+  end
+  helper_method :averageRating
+
+  def ranking
+    @projects = Project.all
   end
 
   private

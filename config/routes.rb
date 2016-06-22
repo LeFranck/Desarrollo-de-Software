@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/ranking' => 'projects#ranking'
+
   get 'psearch' => 'projects#search'
   get 'usearch' => 'users#search'
 

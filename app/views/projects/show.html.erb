@@ -1,97 +1,96 @@
 <% if (notice) %>
-<% temp = "<script>toastr.info(\""+notice+"\")</script>" %>
-<%= temp.html_safe %>
+    <% temp = "<script>toastr.info(\""+notice+"\")</script>" %>
+    <%= temp.html_safe %>
 <% end %>
 
 
 <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
 <div class="container" id="vista_proyecto">
-<div class="container col-sm-8 project-content col-centered">
+    <div class="container col-sm-8 project-content col-centered">
         <div class="row">
             <h2 style="margin:0px">
                 <%= 'Categoria: ' + @project.category.name %>
             </h2>
         </div>
-    <div class="row page-header" style="margin-top:0px">
-        <div class="col-sm-1 votes">
-            <a href="#AgregarComentario">
-                <div class="vote negative" id="ComentarBtn">
-                    <i class="fa fa-comment">
-                    </i>
+        <div class="row page-header" style="margin-top:0px">
+            <div class="col-sm-1 votes">
+                <a href="#AgregarComentario">
+                    <div class="vote negative" id="ComentarBtn">
+                        <i class="fa fa-comment">
+                        </i>
+                    </div>
+                </a>
+                <div class="vote edit" style="text-decoration:none">
+                    <%= link_to '', edit_project_path(@project), class: 'fa fa-wrench edit', style:"text-decoration:none;"%>
                 </div>
-            </a>
-            <div class="vote edit" style="text-decoration:none">
-                <%= link_to '', edit_project_path(@project), class: 'fa fa-wrench edit', style:"text-decoration:none;"%>
+            </div>
+            <div class="col-sm-11">
+                <h1 class="blog-title">
+                    <%= @project.title? ? @project.title : "Sin titulo"  %>
+                    <% averageRating.round(1) %>
+                    <% if not averageRating.nan? %>
+                        <%= number_with_precision(averageRating.round(1), :precision => 1, :separator => ',') %>
+                    <% end %>
+                    <% n = averageRating %>
+                    <div id="stars_partial-div">
+                        <%= render partial: 'stars', locals: { n: averageRating} %>
+                    </div>
+                    <script>ratingStars()</script>
+                </h1>
+                <p class="lead blog-description">
+                <%= @project.description %>
+                </p>
+                <p class="blog-meta">
+                <p>
+                <% @project.users.each do |user| %>
+                    <% user.username %>
+                <% end %>
+                </p>
+                <p>
+                <% @project.owners.each do |owner| %>
+                    <p>
+                    <%= "Creador: " + owner.user.username %>
+                    </p>
+                <% end %>
+                </p>
+                </p>
+                <p class="blog-meta">
+                Fecha creacion: <%= @project.created_at.strftime("%d %b %Y")%>
+            </p>
             </div>
         </div>
-        <div class="col-sm-11">
-            <h1 class="blog-title">
-                <%= @project.title? ? @project.title : "Sin titulo"  %>
-                <% averageRating.round(1) %>
-                <% if not averageRating.nan? %>
-                    <%= number_with_precision(averageRating.round(1), :precision => 1, :separator => ',') %>
-                <% end %>
-                <% n = averageRating %>
-                <div id="stars_partial-div">
-                    <%= render partial: 'stars', locals: { n: averageRating} %>
-                </div>
-                <script>ratingStars()</script>
-            </h1>
-            <p class="lead blog-description">
-            <%= @project.description %>
-            </p>
-            <p class="blog-meta">
-                <p>
-            <% @project.users.each do |user| %>
-                <% user.username %>
-            <% end %>
-                </p>
-                <p>
-            <% @project.owners.each do |owner| %>
-                <p>
-                <%= "Creador: " + owner.user.username %>
-                </p>
-            <% end %>
-                </p>
-        </p>
-        <p class="blog-meta">
-        Fecha creacion: <%= @project.created_at.strftime("%d %b %Y")%>
-    </p>
+
+        <div class="row">
+            <ul class="nav nav-tabs" id="tabs">
+                <li class="active">
+                    <a href="#Content" data-toggle="tab">Contenido</a>
+                </li>
+                <li>
+                    <a href="#Comentarios" data-toggle="tab">Comentarios</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="row">
+            <section class="tab-content">
+                <article class="tab-pane active" id="Content">
+                    <h3>Contenido</h3>
+                    <p>
+                    <%= @project.content %>
+                    </p>
+                </article>
+                <article class="tab-pane" id="Comentarios">
+                    <%= render "listComments" %>
+                    <%= render "addComment" %>
+
+                </article>
+            </section>
+        </div>
+        <div class="row footer">
+            <%= link_to 'Volver', projects_path, class: "btn btn-primary" %>
         </div>
     </div>
-
-    <div class="row">
-        <ul class="nav nav-tabs" id="tabs">
-            <li class="active">
-                <a href="#Content" data-toggle="tab">Contenido</a>
-            </li>
-            <li>
-                <a href="#Comentarios" data-toggle="tab">Comentarios</a>
-            </li>
-        </ul>
+    <div class="container col-sm-12">
     </div>
-
-    <div class="row">
-        <section class="tab-content">
-            <article class="tab-pane active" id="Content">
-                <h3>Contenido</h3>
-                <p>
-                <%= @project.content %>
-                </p>
-            </article>
-            <article class="tab-pane" id="Comentarios">
-                <%= render "listComments" %>
-                <%= render "addComment" %>
-
-            </article>
-        </section>
-    </div>
-    <div class="row footer">
-        <%= link_to 'Volver', projects_path, class: "btn btn-primary" %>
-    </div>
-</div>
-<div class="container col-sm-12">
-    <% debug(@project) %>
-</div>
 </div>
 </div>

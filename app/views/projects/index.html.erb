@@ -1,4 +1,4 @@
-    <%= stylesheet_link_tag "projects.css" %>
+<%= stylesheet_link_tag "projects.css" %>
 <p id="notice"><%= notice %></p>
 <!-- TODO Paginar -->
 <!-- TODO incluir usuarios desde BD -->
@@ -36,7 +36,7 @@
         <% end %>
         <h1>Proyectos</h1>
         <div id="proyectos", data-remote="true">
-          <%= render @projects %>
+          <%= render partial: "project" %>
         </div>
     <br>
   </div>

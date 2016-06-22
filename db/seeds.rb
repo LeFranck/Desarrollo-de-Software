@@ -168,17 +168,7 @@ Project.create({
     scelerisque. Aenean fermentum commodo lectus vel interdum. Aenean at
     tincidunt metus, eget eleifend ligula. Pellentesque porttitor ipsum ut magna
     aliquet sagittis a et dolor. Quisque tellus lacus, faucibus a maximus ac,
-        maximus eget tortor. Sed consectetur suscipit odio.
-        
-        Morbi sagittis libero sed nunc pharetra, non scelerisque erat volutpat.
-        Aliquam varius dictum tellus a ultricies. Nunc mollis scelerisque massa
-    nec tincidunt. Nullam id risus eu lorem congue ullamcorper sed sed nulla.
-        Morbi lobortis faucibus sem, vitae tincidunt nulla suscipit at. Donec
-    rutrum arcu cursus augue dignissim vestibulum tristique sit amet orci. In
-    hac habitasse platea dictumst. Nulla id pellentesque libero, quis iaculis
-    velit. Cras ut nisi vel sem interdum pretium sit amet sed enim. Donec
-    suscipit fringilla nisi, sed sagittis augue placerat in. Donec tincidunt
-    vehicula elementum."
+        maximus eget tortor. Sed consectetur suscipit odio."
 
 })
 Project.create({
@@ -197,16 +187,6 @@ Project.create({
     quam eu ante hendrerit tempor. Proin faucibus vehicula leo sed ullamcorper.
         Duis lectus ante, auctor id posuere ac, semper ac nibh. Cras eget purus
     vitae lorem maximus consequat eu non libero.
-        
-        Nunc placerat nisl a orci ultricies commodo. Phasellus rhoncus vitae
-    tortor eget convallis. Morbi laoreet cursus mi, ut dignissim metus blandit
-    a. Proin a vestibulum risus. Vivamus ornare, leo id viverra congue, risus
-    dolor iaculis orci, in facilisis lectus dolor eget tortor. Lorem ipsum dolor
-    sit amet, consectetur adipiscing elit. Phasellus ultrices cursus mauris ut
-    scelerisque. Aenean fermentum commodo lectus vel interdum. Aenean at
-    tincidunt metus, eget eleifend ligula. Pellentesque porttitor ipsum ut magna
-    aliquet sagittis a et dolor. Quisque tellus lacus, faucibus a maximus ac,
-        maximus eget tortor. Sed consectetur suscipit odio.
         
         Morbi sagittis libero sed nunc pharetra, non scelerisque erat volutpat.
         Aliquam varius dictum tellus a ultricies. Nunc mollis scelerisque massa
@@ -227,31 +207,21 @@ Project.create({
     volutpat odio eget faucibus egestas. Vivamus elementum orci eu dictum
     tristique. Proin et odio gravida, tincidunt tellus ac, cursus mauris. Fusce
     dolor odio, pharetra at dui quis, vehicula eleifend augue. Etiam porta
-    condimentum felis id semper. Mauris bibendum justo sed elit scelerisque
-    efficitur. Integer tempus mauris mi, a vehicula dolor maximus a. Aenean quam
-    metus, convallis ut gravida eu, porta rutrum ligula. Duis mattis sed metus
-    non ornare. Pellentesque vestibulum ac nulla in rhoncus. Praesent rutrum
-    quam eu ante hendrerit tempor. Proin faucibus vehicula leo sed ullamcorper.
-        Duis lectus ante, auctor id posuere ac, semper ac nibh. Cras eget purus
-    vitae lorem maximus consequat eu non libero.
-        
-        Nunc placerat nisl a orci ultricies commodo. Phasellus rhoncus vitae
-    tortor eget convallis. Morbi laoreet cursus mi, ut dignissim metus blandit
-    a. Proin a vestibulum risus. Vivamus ornare, leo id viverra congue, risus
-    dolor iaculis orci, in facilisis lectus dolor eget tortor. Lorem ipsum dolor
-    sit amet, consectetur adipiscing elit. Phasellus ultrices cursus mauris ut
-    scelerisque. Aenean fermentum commodo lectus vel interdum. Aenean at
-    tincidunt metus, eget eleifend ligula. Pellentesque porttitor ipsum ut magna
-    aliquet sagittis a et dolor. Quisque tellus lacus, faucibus a maximus ac,
-        maximus eget tortor. Sed consectetur suscipit odio.
         
         Morbi sagittis libero sed nunc pharetra, non scelerisque erat volutpat.
         Aliquam varius dictum tellus a ultricies. Nunc mollis scelerisque massa
+    suscipit fringilla nisi, sed sagittis augue placerat in. Donec tincidunt
+    vehicula elementum."
+})
+Project.create({
+    "title"=>"Morbi lobortis faucibus",
+    "video_link"=>"http://www.youtube.com/",
+    "description"=>"Scelerisque erat volutpat.",
+    "category_id"=>"6",
+    "content"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+    volutpat odio eget faucibus egestas. Vivamus elementum orci eu dictum
     nec tincidunt. Nullam id risus eu lorem congue ullamcorper sed sed nulla.
-        Morbi lobortis faucibus sem, vitae tincidunt nulla suscipit at. Donec
-    rutrum arcu cursus augue dignissim vestibulum tristique sit amet orci. In
-    hac habitasse platea dictumst. Nulla id pellentesque libero, quis iaculis
-    velit. Cras ut nisi vel sem interdum pretium sit amet sed enim. Donec
+    ac habitasse platea dictumst. Nulla id pellentesque libero, quis iaculis
     suscipit fringilla nisi, sed sagittis augue placerat in. Donec tincidunt
     vehicula elementum."
 })
