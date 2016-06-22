@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'psearch' => 'projects#search'
+  get 'usearch' => 'users#search'
+
   devise_for :users, :skip => [:sessions]
   as :user do
     get 'login' => 'devise/sessions#new', :as => :new_user_session

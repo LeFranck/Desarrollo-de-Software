@@ -1,0 +1,37 @@
+  <div class="media">
+    <div class="media-left">
+        <a href="#">
+            <%= image_tag image_path('open_book.png', size: "128x128", alt: "Imagen no disponible")%>
+        </a>
+    </div>
+    <div class="media-body">
+        <% if project.category %>
+            <h4 class="media-heading">
+            <%= 'Categoria: ' + project.category.name %>
+            <h3 class="media-heading">
+        <% end %>
+    </h4>
+    <%= project.title %>
+        </h3>
+        <p><%= project.description %></p>
+        <div class="media">
+            <div class="media.heading">
+                <% project.owners.each do |owner| %>
+                    <p>
+                    <%= "Creador: " + owner.user.username %>
+                    </p>
+                <%end%>
+            </div>
+        </div>
+        <div class="media">
+        </div>
+      </div>
+      <div class="media-right">
+        <%= link_to 'Ver', project, :class => 'btn btn-primary btn-block front-page-btn' %>
+        <% if current_user && project.owners.exists?(:user_id => current_user.id) %>
+          <%= link_to 'Editar', edit_project_path(project), :class => 'btn btn-warning btn-block front-page-btn' %>
+          <%= link_to 'Eliminar', project, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-block front-page-btn' %>
+        <% end %>
+      </div>
+      <hr />
+  </div>

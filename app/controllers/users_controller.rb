@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :user_page
 
   # GET /users
   # GET /users.json
@@ -62,6 +63,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def search
+    @users = User.search(params[:search])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -71,5 +76,9 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:username, :type, :email, :firstname, :lastname, :birthdate)
+    end
+
+    def user_page
+      @user_page = true
     end
 end
