@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:new, :create]
+  before_action :authenticate_user!, except: [:new, :create, :edit, :update]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :user_page
 
@@ -75,7 +75,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :type, :email, :firstname, :lastname, :birthdate)
+      params.require(:user).permit(:username, :type, :email, :firstname, :lastname, :birthdate, :avatar)
     end
 
     def user_page

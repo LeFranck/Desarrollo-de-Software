@@ -8,6 +8,7 @@
 <div class="container" id="vista_proyecto">
 <div class="container col-sm-2">
 </div>
+
 <div class="container col-sm-8 project-content">
         <div class="row">
             <h2 style="margin:0px">
@@ -15,6 +16,13 @@
             </h2>
         </div>
     <div class="row page-header" style="margin-top:0px">
+
+        <div class="avatar">
+            <div class= "col-sm-9">
+                <%= image_tag image_path(@project.avatar), size: "256x256", alt: "Imagen no disponible", class: "img-circle img-responsive" %>
+            </div>
+        </div>
+
         <div class="col-sm-1 votes">
             <a href="#AgregarComentario">
                 <div class="vote negative" id="ComentarBtn">
@@ -26,7 +34,7 @@
                 <%= link_to '', edit_project_path(@project), class: 'fa fa-wrench edit', style:"text-decoration:none;"%>
             </div>
         </div>
-        <div class="col-sm-11">
+        <div class="col-sm-7">
             <h1 class="blog-title">
                 <%= @project.title? ? @project.title : "Sin titulo"  %>
                 <%= render 'stars' %>
@@ -61,7 +69,13 @@
                 <a href="#Content" data-toggle="tab">Contenido</a>
             </li>
             <li>
+                <a href="#Video" data-toggle="tab">Video</a>
+            </li>
+            <li>
                 <a href="#Comentarios" data-toggle="tab">Comentarios</a>
+            </li>
+            <li>
+                <a href="#Imagenes" data-toggle="tab">Imagenes</a>
             </li>
         </ul>
     </div>
@@ -74,10 +88,17 @@
                 <%= @project.content %>
                 </p>
             </article>
+            <article class="tab-pane" id="Video">
+                <div class="embed-container">  
+                  <%= embed(@project.video_link) %>  
+                </div>  
+            </article>
             <article class="tab-pane" id="Comentarios">
                 <%= render "listComments" %>
                 <%= render "addComment" %>
-
+            </article>
+            <article class="tab-pane" id="Imagenes">
+                <%= render "listProjectPhoto"%>
             </article>
         </section>
     </div>
@@ -90,3 +111,5 @@
 </div>
 </div>
 </div>
+
+<script src="javascripts/gallerly.js"></script>
