@@ -7,8 +7,22 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-
-
+User.create({
+    "username"=>"Relativity",
+    "firstname"=>"Albert",
+    "lastname"=>"Einstein",
+    "password"=>"123456",
+    "birthdate"=>"1879-03-14",
+    "email"=>"aeinstein@example.com",
+})
+User.create({
+    "username"=>"isaacN",
+    "firstname"=>"Isaac",
+    "lastname"=>"Newton",
+    "password"=>"123456",
+    "birthdate"=>"1652-01-04",
+    "email"=>"inewton@example.com",
+})
 User.create({
   "username"=> "cbishop0",
   "firstname"=> "Carol",
@@ -88,22 +102,6 @@ User.create({
   "email"=> "anelson9@nature.com",
   "password"=> "rgRaiEDpgUB",
   "birthdate"=> "1999-04-23"
-})
-User.create({
-    "username"=>"RelativeEinstein",
-    "firstname"=>"Albert",
-    "lastname"=>"Einstein",
-    "password"=>"123456",
-    "birthdate"=>"1879-03-14",
-    "email"=>"aeinstein@example.com",
-})
-User.create({
-    "username"=>"1s44cN3wt0n",
-    "firstname"=>"Isaac",
-    "lastname"=>"Newton",
-    "password"=>"123456",
-    "birthdate"=>"1652-01-04",
-    "email"=>"inewton@example.com",
 })
 Category.create({
     "name"=>"Otros",

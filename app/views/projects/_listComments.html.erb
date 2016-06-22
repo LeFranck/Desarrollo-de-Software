@@ -19,10 +19,12 @@
                 <a class="media-left" href="#">
                     <%#/* Agregar aqui imagen del usuario */%>
                     <%#<img src="http://lorempixel.com/40/40/people/1/">%>
+                    <%#<%= debug(comment.user.avatar) %>
+                    <%#<%= image_tag image_path(comment.user.avatar), size: "20x20", alt: "Imagen no disponible", class: "img-responsive" %>
                 </a>
                 <div class="media-body">
                     <h4 class="media-heading user_name">
-                        <%= comment.user.username %>
+                        <%= link_to comment.user.username, comment.user %>
                     </h4>
                     <%= comment.content %>
                 </div>
