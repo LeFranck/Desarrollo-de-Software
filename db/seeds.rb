@@ -223,7 +223,7 @@ Project.create({
     nec tincidunt. Nullam id risus eu lorem congue ullamcorper sed sed nulla.
     ac habitasse platea dictumst. Nulla id pellentesque libero, quis iaculis
     suscipit fringilla nisi, sed sagittis augue placerat in. Donec tincidunt
-    vehicula elementum."
+    vehicula elementum.",
 })
 Owner.create({
     "project_id"=>"1",

@@ -40,7 +40,9 @@
             <% end %>
         </div>
         <div id="proyectos", data-remote="true">
-            <%= render partial: "project" %>
+            <% @projects.each do |project| %>
+                <%= render partial: "project", :object => project %>
+            <% end %>
         </div>
     <br>
   </div>
