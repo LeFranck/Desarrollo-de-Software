@@ -8,6 +8,7 @@ function ratingStars() {
         $(this).siblings().addClass('star-inactive');
         $(this).prevAll().addClass('star-active');
     }, 
+    /* unhover */
     function () {
         $(this).siblings().removeClass('star-inactive');
         $(this).prevAll().removeClass('star-active');

@@ -96,7 +96,7 @@ class ProjectvotesController < ApplicationController
     def check_duplicate
       if @project.projectvotes.exists?(:user_id => current_user.id)
           ## comentado por testing
-        #redirect_to @project, notice: 'Already voted'
+        redirect_to @project, notice: 'Usted ya realizó su voto.'
       end
     end
 end

@@ -3,14 +3,11 @@
     <%= temp.html_safe %>
 <% end %>
 
-
 <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
 <div class="container" id="vista_proyecto">
     <div class="container col-sm-8 project-content col-centered">
         <div class="row">
-            <h2 style="margin:0px">
                 <%= 'Categoria: ' + @project.category.name %>
-            </h2>
         </div>
         <div class="row page-header" style="margin-top:0px">
             <div class="col-sm-1 votes">
@@ -25,13 +22,15 @@
                 </div>
             </div>
             <div class="col-sm-11">
-                <h1 class="blog-title">
+                <div class="project-title">
+                    <h1>
                     <%= @project.title? ? @project.title : "Sin titulo"  %>
                     <div id="stars_partial-div">
                         <%= render partial: 'stars', locals: { n: @project.average_rating} %>
                     </div>
                     <script>ratingStars()</script>
-                </h1>
+                    </h1>
+                </div>
                 <p class="lead blog-description">
                 <%= @project.description %>
                 </p>
