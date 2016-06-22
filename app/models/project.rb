@@ -50,4 +50,9 @@ class Project < ActiveRecord::Base
       :only => :title
     }
   }
+
+  def average_rating
+      self.projectvotes.average(:rating) or 0
+  end
+
 end

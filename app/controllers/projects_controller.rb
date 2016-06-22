@@ -98,8 +98,9 @@ class ProjectsController < ApplicationController
   end
   helper_method :averageRating
 
+
   def ranking
-    @projects = Project.all
+    @projects = Project.all.sort_by{|project| -project.average_rating}
   end
 
   private
