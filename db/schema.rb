@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160615052901) do
+ActiveRecord::Schema.define(version: 20160621204316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,20 @@ ActiveRecord::Schema.define(version: 20160615052901) do
   add_index "owners", ["project_id"], name: "index_owners_on_project_id", using: :btree
   add_index "owners", ["user_id"], name: "index_owners_on_user_id", using: :btree
 
+  create_table "project_photos", force: :cascade do |t|
+    t.integer  "number"
+    t.integer  "project_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.string   "description"
+  end
+
+  add_index "project_photos", ["project_id"], name: "index_project_photos_on_project_id", using: :btree
+
   create_table "project_tags", force: :cascade do |t|
     t.integer  "project_id"
     t.integer  "tag_id"
@@ -69,11 +83,15 @@ ActiveRecord::Schema.define(version: 20160615052901) do
   create_table "projects", force: :cascade do |t|
     t.string   "description"
     t.string   "video_link"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "category_id"
     t.string   "title"
     t.string   "content"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "projectvotes", force: :cascade do |t|
@@ -120,9 +138,14 @@ ActiveRecord::Schema.define(version: 20160615052901) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "project_photos", "projects"
 end
