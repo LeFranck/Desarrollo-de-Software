@@ -5,7 +5,7 @@
 <!-- TODO PONER LINK A PROYECTO EN FOTO -->
 <!-- TODO poner title -->
 <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-2">
         <div class="sidebar-nav">
             <div class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">
@@ -30,13 +30,17 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-8">
-        <% if current_user %>
-            <%= link_to 'Nuevo Proyecto', new_project_path, :class => 'btn btn-success btn-block front-page-btn' %>
-        <% end %>
-        <h1>Proyectos</h1>
+    <div class="col-sm-9">
+        <div class="row project-title">
+            <h1>Proyectos</h1>
+        </div>
+        <div class="row" style="margin-bottom:10px">
+            <% if current_user %>
+                <%= link_to 'Nuevo Proyecto', new_project_path, :class => 'btn btn-success btn-block front-page-btn' %>
+            <% end %>
+        </div>
         <div id="proyectos", data-remote="true">
-          <%= render partial: "project" %>
+            <%= render partial: "project" %>
         </div>
     <br>
   </div>

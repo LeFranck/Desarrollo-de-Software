@@ -144,10 +144,10 @@ Comment.create({
     "project_id"=>"2",
 })
 Project.create({
-    "title"=>"Place holder title",
+    "title"=>"Leyes de Newton",
     "video_link"=>"http://www.youtube.com/",
-    "description"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed massa non enim lacinia pulvinar in in nulla. ",
-    "category_id"=>"1",
+    "description"=>"Explicacion de las leyes de Newton y uso con ejemplos.",
+    "category_id"=>"9",
     "content"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
     volutpat odio eget faucibus egestas. Vivamus elementum orci eu dictum
     tristique. Proin et odio gravida, tincidunt tellus ac, cursus mauris. Fusce
