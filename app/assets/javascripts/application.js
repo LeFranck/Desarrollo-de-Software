@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//= require hermitage
 //= require jquery_nested_form
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker

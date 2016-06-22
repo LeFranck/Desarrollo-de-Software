@@ -24,7 +24,59 @@
 .avatar{
   position:absolute;
   right:0;
+  max-width: 256px;
 }
+
+
+input[type=file]{
+  margin: 0 auto;
+  background-color: #F8F8F8;
+  border: none;
+  padding: 16px 32px;
+  text-decoration: none;
+}
+
+.actions{
+  padding: 10px 10px;
+}
+
+div.new_photo{
+  margin: 0 auto;
+  width: 60%;
+  background-color: #F8F8F8;
+  border: none;
+  text-decoration: none;
+}
+
+div.new_photo .text-area{
+  height: 40px;
+
+}
+
+
+
+div.photo {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.photo:hover {
+    border: 1px solid #777;
+}
+
+div.photo photo {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+
 
 
 .front-page-btn {
@@ -60,6 +112,7 @@
 .category-dropdown {
   background: #fff;
 }
+
 
 @media (min-width: 768px) {
   .sidebar-nav .navbar .navbar-collapse {
@@ -177,23 +230,3 @@ $comment : #4ab79a;
 }
 
 
-div.photo {
-    margin: 5px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 180px;
-}
-
-div.photo:hover {
-    border: 1px solid #777;
-}
-
-div.photo photo {
-    width: 100%;
-    height: auto;
-}
-
-div.desc {
-    padding: 15px;
-    text-align: center;
-}

@@ -2,7 +2,7 @@
   <div class= "photo" >
     <%= image_tag image_path(pp.photo), size: "256x256", alt: "Imagen no disponible", class: "img-circle img-responsive" %>
     <div class="desc">
-      pp.description
+      <%= pp.description %>
     </div>
   </div>
 <% end %>

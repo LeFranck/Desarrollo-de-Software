@@ -56,14 +56,19 @@
   </div>
 
   <div class= "field">
-  <%= nested_form_for @project do |p| %>
-    <%= p.fields_for :project_photos do |task_form| %>
-      <%= task_form.file_field :photo %>
-      <%= task_form.text_field :description %>
-      <%= task_form.link_to_remove "Eliminar foto" %>
-    <% end %>
-    <p><%= p.link_to_add "Agregar foto", :project_photos %></p>
-  <% end %>
+    <div class= "new_photo">
+      <%= nested_form_for @project do |p| %>
+        <%= p.fields_for :project_photos do |task_form| %>
+          <%= task_form.file_field :photo %>
+          Agregar descripcion
+          <div class="field">
+            <%= task_form.text_area :description , :class => "text-area"%>
+          </div>
+          <%= task_form.link_to_remove ".  Eliminar foto  ."  %>
+        <% end %>
+        <%= p.link_to_add ". Agregar foto  .", :project_photos %>
+      <% end %>
+    </div>
   </div>
   
 </div>

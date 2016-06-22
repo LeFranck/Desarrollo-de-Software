@@ -18,7 +18,9 @@
     <div class="row page-header" style="margin-top:0px">
 
         <div class="avatar">
-           <%= image_tag image_path(@project.avatar), size: "256x256", alt: "Imagen no disponible", class: "img-circle img-responsive" %>
+            <div class= "col-sm-9">
+                <%= image_tag image_path(@project.avatar), size: "256x256", alt: "Imagen no disponible", class: "img-circle img-responsive" %>
+            </div>
         </div>
 
         <div class="col-sm-1 votes">
@@ -32,7 +34,7 @@
                 <%= link_to '', edit_project_path(@project), class: 'fa fa-wrench edit', style:"text-decoration:none;"%>
             </div>
         </div>
-        <div class="col-sm-11">
+        <div class="col-sm-7">
             <h1 class="blog-title">
                 <%= @project.title? ? @project.title : "Sin titulo"  %>
                 <%= render 'stars' %>
