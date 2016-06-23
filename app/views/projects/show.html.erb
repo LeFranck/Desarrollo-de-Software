@@ -10,11 +10,6 @@
     </div>
 
     <div class="container col-sm-8 project-content">
-        <div class="row">
-            <h4 style="margin:0px">
-                <%= 'Categoria: ' + @project.category.name %>
-            </h4>
-        </div>
         <div class="row page-header" style="margin-top:0px">
             <div class="avatar">
                 <div class= "col-sm-9">
@@ -23,6 +18,9 @@
                 <% else %>
                     <%= render "default" %>
                 <% end %>
+            <h3 style="margin:0px; font-weight:bold; text-align:center;margin-top:4px;">
+                <%= @project.category.name %>
+            </h3>
                 </div>
             </div>
             <div class="col-sm-1 votes">

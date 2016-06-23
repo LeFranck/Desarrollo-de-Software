@@ -52,6 +52,9 @@
             <%= f.label :categoría , :class => 'label-title'%><br />
             <%= f.collection_select :category_id, Category.all, :id, :name, {},:class => "category-dropdown" %>
         </div>
+        <div class="actions">
+            <%= f.submit %>
+        </div>
 
         <div class= "field">
             <div class= "new_photo">
@@ -69,8 +72,5 @@
             </div>
         </div>
 
-        <div class="actions">
-            <%= f.submit %>
-        </div>
     <% end %>
 </div>
