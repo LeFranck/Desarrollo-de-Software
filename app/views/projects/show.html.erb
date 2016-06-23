@@ -4,7 +4,7 @@
 <% end %>
 <% current_user_is_owner = false %>
 <% @project.owners.each do |owner| %>
-    <% if (defined? current_user and owner.user_id == current_user.id)  %>
+    <% if (defined? current_user and signed_in? and owner.user_id == current_user.id) %> 
         <% current_user_is_owner = true %>
     <% end %>
 <% end %>
