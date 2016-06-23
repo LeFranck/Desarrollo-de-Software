@@ -1,0 +1,4 @@
+<% if (notice) %>
+    <% temp = "<script>toastr.info(\""+notice+"\")</script>" %>
+    <%= temp.html_safe %>
+<% end %>
