@@ -12,9 +12,9 @@ $(document).on('page:change', function() {
         
         //$('#tabs a[href="#Imagenes"]').tab('show');
 
-        console.log(classname);
+        //console.log(classname); 
         classname = "Otros"
-        console.log(classname);
+        //console.log(classname);
         var str = '#tabs a[href="#'+classname+'"]';
         $(str).tab('show');
         
@@ -27,6 +27,6 @@ $(document).on('page:change', function() {
  * Focus en texto para comentar
  * */
 $("#ComentarBtn").click(function () {
-    $('#tabs a[href="#Coment"]').tab('show');
+    $('#tabs a[href="#Comentarios"]').tab('show');
     $('#comment_box').focus();
 });
