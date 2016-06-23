@@ -9,9 +9,15 @@ $(document).on('page:change', function() {
 
 
         var classname = $(this).closest('li').attr('class').split(' ')[0];
-        //var str = '#tabs a[href="#'+classname.toString()+'"]';
-        //$(str).tab('show');
-        $('#tabs a[href="#Imagenes"]').tab('show');
+        
+        //$('#tabs a[href="#Imagenes"]').tab('show');
+
+        console.log(classname);
+        classname = "Otros"
+        console.log(classname);
+        var str = '#tabs a[href="#'+classname+'"]';
+        $(str).tab('show');
+        
         //console.log(classname);
     });
 });
