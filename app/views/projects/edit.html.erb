@@ -2,11 +2,11 @@
 
 <%= render 'form' %>
 
-    <div class="col-sm-5">
-    </div>
 <div class="row">
-    <div class="col-sm-2">
-<%= link_to 'Ver proyecto', @project, :class =>'btn btn-primary' %>
-<%= link_to 'Lista proyectos', projects_path, :class => 'btn btn-primary' %>
+    <div class="col-sm-4 btn-container">
+    </div>
+    <div class="col-sm-4 btn-container">
+<%= link_to 'Ver proyecto', @project, :class =>'btn btn-primary btn-ver-proyecto-edit' %>
+<%= link_to 'Lista proyectos', projects_path, :class => 'btn btn-primary btn-lista-proyectos-edit' %>
     </div>
 </div>
