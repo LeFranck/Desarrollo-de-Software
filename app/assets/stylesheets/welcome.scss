@@ -1,3 +1,89 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.background-image {
+    background-size:cover;
+    width:100%;
+    height:100%;
+    top:50px;
+    position:fixed;
+    background-image:url("images/landingpage.jpg");
+}
+
+.welcome-btn {
+    color:white;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size:30px;
+    position:absolute;
+    padding:0 20px;
+}
+
+.ver-usuarios {
+    left:30%;
+    bottom:10%;
+}
+
+.ver-proyectos {
+    right:17%;
+    top:50%;
+}
+
+.iniciar-sesion {
+    left:17%;
+    top:30%;
+    /*-ms-transform: rotate(-7deg); [> IE 9 <]*/
+    /*-webkit-transform: rotate(-7deg); [> Safari <]*/
+    /*transform: rotate(-7deg);*/
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+@import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+a.snip1099 {
+    font-family: 'Raleway', Arial, sans-serif;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 400;
+    outline: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+a.snip1099 span {
+    display: inline-block;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    opacity: 0.8;
+}
+
+a.snip1099 i {
+    font-size: 30px;
+    position: absolute;
+    left:10px;
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+a.snip1099:hover span,
+a.snip1099.hover span {
+    -webkit-transform: translate3d(15px, 0px, 0px);
+    transform: translate3d(15px, 0px, 0px);
+    opacity: 1;
+}
+
+a.snip1099:hover i,
+a.snip1099.hover i {
+    opacity: 0.8;
+}
+
+a.snip1099:active span {
+    -webkit-transform: translate3d(14px, 0px, 0px);
+    transform: translate3d(14px, 0px, 0px);
+}
+
+a.snip1099:active i {
+    left: 18px;
+}
