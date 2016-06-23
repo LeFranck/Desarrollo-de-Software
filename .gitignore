@@ -12,6 +12,7 @@
 !/log/.keep
 /tmp
 
+**.DS_Store
 *.rbc
 capybara-*.html
 .rspec

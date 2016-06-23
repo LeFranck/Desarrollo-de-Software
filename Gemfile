@@ -15,6 +15,10 @@ gem 'paperclip', '~> 4.3.6'
 
 gem 'bootstrap-datepicker-rails'
 
+gem 'rails-bootstrap-markdown'
+gem 'github-markup'
+gem 'redcarpet'
+
 gem 'toastr-rails'
 
 # Use SCSS for stylesheets
@@ -40,6 +44,7 @@ gem 'devise'
 #Project Photos
 gem "nested_form"
 
+gem "color-generator"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

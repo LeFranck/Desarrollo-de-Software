@@ -47,7 +47,7 @@ class ProjectvotesController < ApplicationController
   def update
     respond_to do |format|
       if @projectvote.update(projectvote_params)
-        format.html { redirect_to @project, notice: 'Projectvote was successfully updated.' }
+        format.html { redirect_to @project, notice: 'Su voto fue actualizado.' }
         format.json { render :show, status: :ok, location: @projectvote }
       else
         format.html { render :edit }

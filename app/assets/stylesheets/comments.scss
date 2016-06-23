@@ -1,3 +1,69 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.comment-body {
+    padding-left:80px;
+}
+
+.comment-image {
+    position:absolute;
+    left:0px;
+    top:0px;
+}
+.comment-container {
+    position:relative;
+    background-color:#f0f0f0;
+    border-bottom:1px dotted #777;
+}
+.comment-border-left {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:30px;
+    height:100%;
+}
+
+/* FOR COMMENT BOX */
+.status-upload {
+    background: none repeat scroll 0 0 #f5f5f5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    float: left;
+    width: 100%;
+}
+.status-upload form {
+    float: left;
+    width: 100%;
+}
+.status-upload form textarea {
+    background: none repeat scroll 0 0 #fff;
+    border: medium none;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    -ms-border-radius: 4px 4px 0 0;
+    -o-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+    color: #777777;
+    float: left;
+    font-family: Lato;
+    font-size: 14px;
+    height: 100px;
+    letter-spacing: 0.3px;
+    padding: 20px;
+    width: 100%;
+    resize:vertical;
+    outline:none;
+    border: 1px solid #F2F2F2;
+}
+.status-upload .form-submit {
+    float: right;
+    width:100%;
+}
+.comment-date {
+    position:absolute;
+    top:2px;
+    right: 5px;
+}

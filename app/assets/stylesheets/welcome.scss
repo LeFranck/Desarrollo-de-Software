@@ -1,0 +1,154 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.background-image {
+    background-size:cover;
+    width:100%;
+    height:100%;
+    top:50px;
+    position:fixed;
+    background-image:url("images/landingpage.jpg");
+}
+
+.welcome-btn {
+    color:white;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size:30px;
+    position:absolute;
+    padding:0 20px;
+}
+
+.ver-usuarios {
+    left:30%;
+    bottom:10%;
+}
+
+.ver-proyectos {
+    right:17%;
+    top:50%;
+}
+
+.iniciar-sesion {
+    left:17%;
+    top:30%;
+    /*-ms-transform: rotate(-7deg); [> IE 9 <]*/
+    /*-webkit-transform: rotate(-7deg); [> Safari <]*/
+    /*transform: rotate(-7deg);*/
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+@import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:900);
+a.snip1099 {
+    font-family: 'Raleway', Arial, sans-serif;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 400;
+    outline: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+a.snip1099 span {
+    display: inline-block;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    opacity: 0.8;
+}
+
+a.snip1099 i {
+    font-size: 30px;
+    position: absolute;
+    left:10px;
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+a.snip1099:hover span,
+a.snip1099.hover span {
+    -webkit-transform: translate3d(15px, 0px, 0px);
+    transform: translate3d(15px, 0px, 0px);
+    opacity: 1;
+}
+
+a.snip1099:hover i,
+a.snip1099.hover i {
+    opacity: 0.8;
+}
+
+a.snip1099:active span {
+    -webkit-transform: translate3d(14px, 0px, 0px);
+    transform: translate3d(14px, 0px, 0px);
+}
+
+a.snip1099:active i {
+    left: 18px;
+}
+
+.welcome-title-container {
+    position:absolute;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+}
+
+.welcome-title {
+    margin-left:auto;
+    margin-right:auto;
+    width:100%;
+    text-align:center;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+.snip1236 {
+    font-family: 'Raleway', Arial, sans-serif;
+    overflow: hidden;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+  border-top: 3px solid rgba(0, 0, 0, 0.6);
+  padding-top: 6px;
+}
+.snip1236 * {
+  -webkit-box-sizing: padding-box;
+  box-sizing: padding-box;
+}
+.snip1236 h1,
+.snip1236 h5 {
+  margin: 0;
+  line-height: 1em;
+}
+.snip1236 h1 {
+  font-family: 'Playfair Display', Arial, sans-serif;
+  font-size: 2.8em;
+  text-transform: uppercase;
+}
+.snip1236 h5 {
+  line-height: 0.8em;
+  font-weight: 400;
+  display: table;
+  position: relative;
+  display: inline-block;
+  width: auto;
+  padding: 0 10px;
+}
+.snip1236 h5:before,
+.snip1236 h5:after {
+  position: absolute;
+  height: 3px;
+  content: '';
+  background: rgba(0, 0, 0, 0.6);
+  width: 1000%;
+  top: 50%;
+}
+.snip1236 h5:before {
+  left: -1000%;
+}
+.snip1236 h5:after {
+  right: -1000%;
+}

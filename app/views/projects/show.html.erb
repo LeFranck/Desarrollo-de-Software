@@ -1,6 +1,12 @@
-<% if (notice) %>
-    <% temp = "<script>toastr.info(\""+notice+"\")</script>" %>
-    <%= temp.html_safe %>
+
+<% if @project.owners.include?(current_user) %>
+    true
+<% end %>
+<% current_user_is_owner = false %>
+<% @project.owners.each do |owner| %>
+    <% if (defined? current_user and signed_in? and owner.user_id == current_user.id) %> 
+        <% current_user_is_owner = true %>
+    <% end %>
 <% end %>
 
 
@@ -10,11 +16,6 @@
     </div>
 
     <div class="container col-sm-8 project-content">
-        <div class="row">
-            <h4 style="margin:0px">
-                <%= 'Categoria: ' + @project.category.name %>
-            </h4>
-        </div>
         <div class="row page-header" style="margin-top:0px">
             <div class="avatar">
                 <div class= "col-sm-9">
@@ -23,6 +24,9 @@
                 <% else %>
                     <%= render "default" %>
                 <% end %>
+            <h3 style="margin:0px; font-weight:bold; text-align:center;margin-top:4px;">
+                <%= @project.category.name %>
+            </h3>
                 </div>
             </div>
             <div class="col-sm-1 votes">
@@ -32,9 +36,11 @@
                         </i>
                     </div>
                 </a>
-                <div class="vote edit" style="text-decoration:none">
-                    <%= link_to '', edit_project_path(@project), class: 'fa fa-wrench edit', style:"text-decoration:none;"%>
-                </div>
+                <% if (current_user_is_owner) %>
+                    <div class="vote edit" style="text-decoration:none">
+                        <%= link_to '', edit_project_path(@project), class: 'fa fa-wrench edit', style:"text-decoration:none;"%>
+                    </div>
+                <% end %>
             </div>
             <div class="col-sm-7">
                 <div class="project-title">
@@ -65,27 +71,36 @@
 
         <div class="row">
             <ul class="nav nav-tabs" id="tabs">
-                <li class="active">
+                <li class="active Content">
                     <a href="#Content" data-toggle="tab">Contenido</a>
                 </li>
-                <li>
+                <li class="Video">
                     <a href="#Video" data-toggle="tab">Video</a>
                 </li>
-                <li>
+                <li class="Comentarios">
                     <a href="#Comentarios" data-toggle="tab">Comentarios</a>
                 </li>
-                <li>
+                <li class="Imagenes">
                     <a href="#Imagenes" data-toggle="tab">Imagenes</a>
+                </li>
+                <li class="Otros hide-me" style="opacity:0">
+                    <a href="#Otros" data-toggle="tab">Otros</a>
                 </li>
             </ul>
         </div>
+        <script>
+    $("#ComentarBtn").click(function () {
+        $('#tabs a[href="#Comentarios"]').tab('show');
+        $('#comment_box').focus();
+    });
+        </script>
 
         <div class="row">
             <section class="tab-content">
                 <article class="tab-pane active" id="Content">
-                    <h3>Contenido</h3>
                     <p>
-                    <%= @project.content %>
+                    <% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true) %>
+                    <%= markdown.render(@project.content).html_safe %>
                     </p>
                 </article>
                 <article class="tab-pane" id="Video">
