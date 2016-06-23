@@ -3,7 +3,8 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on('page:change', function() {
    $('.nav li a').click(function() {
+      console.log("hola");
       $('.nav li').removeClass();
-      $(this).closest('li').addClass(' active');
+      $(this).closest('li').addClass('active');
    });
 });

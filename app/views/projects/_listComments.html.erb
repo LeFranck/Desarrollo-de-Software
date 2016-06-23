@@ -18,17 +18,17 @@
             <div class="comment-container media" style="border-left:10px solid #<%=comment_color%>">
                 <div class="comment-border-left" style="background-color:#<%=comment_color%>">
                 </div>
-                <p class="pull-right"><small>
+                <p class="comment-date"><small>
                     <%= comment.created_at.strftime("%d %b %Y, %H:%M") %></small></p>
-                <a class="comment-image" href="#">
-                       <% if !comment.user.avatar_file_name.nil? %>
-                        <%= image_tag image_path(comment.user.avatar) , size: "60x60", alt: image_path('pinguino.png'), class: "img-circle" %>
+                <div class="comment-image">
+                    <% if !comment.user.avatar_file_name.nil? %>
+                        <%= link_to image_tag(image_path(comment.user.avatar) , size: "60x60", alt: image_path('pinguino.png'), class: "img-circle"), comment.user %>
                     <% else %>
                         <div class="pinguino">
-                          <%= image_tag image_path('pinguino.png') , size: "60x60", alt: "img missing" , class: "img-circle img-responsive" %>
+                            <%= link_to image_tag(image_path('pinguino.png') , size: "60x60", alt: "img missing" , class: "img-circle img-responsive"), comment.user %>
                         </div>
                     <% end %>
-            </a>
+                </div>
                 <div class="comment-body">
                     <h4>
                         <%= link_to comment.user.username, comment.user %>

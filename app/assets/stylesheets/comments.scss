@@ -20,7 +20,7 @@
     left:0px;
     top:0px;
     width:30px;
-    height:60px;
+    height:100%;
 }
 
 /* FOR COMMENT BOX */
@@ -61,4 +61,9 @@
 .status-upload .form-submit {
     float: right;
     width:100%;
+}
+.comment-date {
+    position:absolute;
+    top:2px;
+    right: 5px;
 }
