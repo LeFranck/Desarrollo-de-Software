@@ -66,3 +66,7 @@
 .filterable .filters input[disabled]:-ms-input-placeholder {
     color: #333;
 }
+
+input#user_avatar{
+    min-height: 60px;
+}
