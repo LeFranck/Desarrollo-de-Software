@@ -15,6 +15,10 @@ gem 'paperclip', '~> 4.3.6'
 
 gem 'bootstrap-datepicker-rails'
 
+gem 'rails-bootstrap-markdown'
+gem 'github-markup'
+gem 'redcarpet'
+
 gem 'toastr-rails'
 
 # Use SCSS for stylesheets

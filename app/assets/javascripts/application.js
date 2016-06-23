@@ -14,6 +14,7 @@
 //= require jquery_nested_form
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
+//= require bootstrap-markdown-bundle
 //= require toastr
 //= require jquery_ujs
 //= require turbolinks

@@ -91,7 +91,10 @@
                 <article class="tab-pane active" id="Content">
                     <h3>Contenido</h3>
                     <p>
-                    <%= @project.content %>
+                    <%#<%= GitHub::Markup.render('Content', @project.content) %>
+
+                    <% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true) %>
+                    <%= markdown.render(@project.content).html_safe %>
                     </p>
                 </article>
                 <article class="tab-pane" id="Video">
