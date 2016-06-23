@@ -14,14 +14,26 @@
         <% end %>
 
         <div style="display:inline-block" class="starvote">
-        <%= form_for([@project, @project.projectvotes.build] ) do |f| %>
-            <div class="field">
-                <%= f.hidden_field :rating, :value => (i) %>
-            </div>
-            <%= button_tag(type: 'submit', class: "submit-star") do %>
-                <% html_icon = "<i class=\""+star_class+"\"></i>" %>
-                <%= html_icon.html_safe %>
-             <% end %>
+        <% if @project.projectvotes.exists?(:user_id => current_user.id) %>
+            <%= form_for ([@project, @project.projectvotes.where(:user_id => current_user.id).first]) do |f| %> 
+                <div class="field">
+                    <%= f.hidden_field :rating, :value => (i) %>
+                </div>
+                <%= button_tag(type: 'submit', class: "submit-star") do %>
+                    <% html_icon = "<i class=\""+star_class+"\"></i>" %>
+                    <%= html_icon.html_safe %>
+                 <% end %>
+            <% end %>
+        <% else %>
+            <%= form_for([@project, @project.projectvotes.build] ) do |f| %>
+                <div class="field">
+                    <%= f.hidden_field :rating, :value => (i) %>
+                </div>
+                <%= button_tag(type: 'submit', class: "submit-star") do %>
+                    <% html_icon = "<i class=\""+star_class+"\"></i>" %>
+                    <%= html_icon.html_safe %>
+                 <% end %>
+            <% end %>
         <% end %>
         </div>
     <% end %>
