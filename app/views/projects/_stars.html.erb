@@ -14,8 +14,8 @@
         <% end %>
 
         <div style="display:inline-block" class="starvote">
-        <% if @project.projectvotes.exists?(:user_id => current_user.id) %>
-            <%= form_for ([@project, @project.projectvotes.where(:user_id => current_user.id).first]) do |f| %> 
+        <% if current_user && @project.projectvotes.exists?(:user_id => current_user.id) %>
+            <%= form_for ([@project, @project.projectvotes.where(:user_id => current_user.id).first]) do |f| %>
                 <div class="field">
                     <%= f.hidden_field :rating, :value => (i) %>
                 </div>
