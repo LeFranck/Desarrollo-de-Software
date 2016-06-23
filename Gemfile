@@ -40,6 +40,7 @@ gem 'devise'
 #Project Photos
 gem "nested_form"
 
+gem "color-generator"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

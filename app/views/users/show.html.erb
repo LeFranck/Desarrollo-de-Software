@@ -21,10 +21,10 @@
                     <div class="row">
                         <div class="col-md-3 col-lg-3 " align="center"> 
                            <% if !@user.avatar_file_name.nil? %>
-                                <%= image_tag image_path(@user.avatar) , size: "128x128", alt: image_path('pinguino.png') %>
+                                <%= image_tag image_path(@user.avatar) , size: "84x84", alt: image_path('pinguino.png'), class:"img-circle" %>
                             <% else %>
                                 <div class="pinguino">
-                                  <%= image_tag image_path('pinguino.png') , size: "128x128", alt: "img missing" , class: "img-circle img-responsive" %>
+                                  <%= image_tag image_path('pinguino.png') , size: "84x84", alt: "img missing" , class: "img-circle img-responsive" %>
                                 </div>
                             <% end %>
                         </div>
