@@ -20,7 +20,13 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-3 col-lg-3 " align="center"> 
-                            <%= image_tag image_path(@user.avatar), size: "128x128", alt: "Imagen no disponible", class: "img-circle img-responsive" %>
+                           <% if !@user.avatar_file_name.nil? %>
+                                <%= image_tag image_path(@user.avatar) , size: "128x128", alt: image_path('pinguino.png') %>
+                            <% else %>
+                                <div class="pinguino">
+                                  <%= image_tag image_path('pinguino.png') , size: "128x128", alt: "img missing" , class: "img-circle img-responsive" %>
+                                </div>
+                            <% end %>
                         </div>
                             <div class=" col-md-9 col-lg-9 "> 
                                 <table class="table table-user-information">

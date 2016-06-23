@@ -6,8 +6,7 @@
                             <%#<img src="http://lorempixel.com/160/160?rand=1" alt="Image">%>
                             <% if !project.avatar_file_name.nil? %>
                                 <%= image_tag image_path(project.avatar) , size: "160x160", alt: image_path('open_book.png') %>
-                            <% end %>
-                            <% if project.avatar_file_name.nil?%>
+                            <% else %>
                                 <%= image_tag image_path('open_book.png' , size: "160x160", alt: "img missing" )%>
                             <% end %>
                         </div>

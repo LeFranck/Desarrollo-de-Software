@@ -1,0 +1,23 @@
+<% if @project.category_id == 1%>
+	<%= image_tag image_path('otros.png') , size: "160x160", alt: "img missing" , class: "img-circle img-responsive" %>
+<% elsif @project.category_id == 2%>
+	<%= image_tag image_path('lenguaje.png') , size: "160x160", alt: "img missing" , class: "img-circle img-responsive" %>
+<% elsif @project.category_id == 3%>
+	<%= image_tag image_path('matematicas.png') , size: "160x160", alt: "img missing" , class: "img-circle img-responsive" %>
+<% elsif @project.category_id == 4%>
+	<%= image_tag image_path('ingles.png') , size: "160x160", alt: "img missing" , class: "img-circle img-responsive" %>
+<% elsif @project.category_id == 5%>
+	<%= image_tag image_path('computacion.png') , size: "160x160", alt: "img missing" , class: "img-circle img-responsive" %>
+<% elsif @project.category_id == 6%>
+	<%= image_tag image_path('arte.png') , size: "160x160", alt: "img missing" , class: "img-circle img-responsive" %>
+<% elsif @project.category_id == 7%>
+	<%= image_tag image_path('musica.png') , size: "160x160", alt: "img missing" , class: "img-circle img-responsive" %>
+<% elsif @project.category_id == 8%>
+	<%= image_tag image_path('quimica.png') , size: "160x160", alt: "img missing" , class: "img-circle img-responsive" %>
+<% elsif @project.category_id == 9%>
+	<%= image_tag image_path('fisica.png') , size: "160x160", alt: "img missing" , class: "img-circle img-responsive" %>
+<% elsif @project.category_id == 10%>
+	<%= image_tag image_path('biologia.png') , size: "160x160", alt: "img missing" , class: "img-circle img-responsive" %>
+<% else %>
+	<%= image_tag image_path(@project.avatar) , size: "160x160", alt: image_path('pinguino.png') ,class: "img-circle img-responsive"%>
+<% end %>

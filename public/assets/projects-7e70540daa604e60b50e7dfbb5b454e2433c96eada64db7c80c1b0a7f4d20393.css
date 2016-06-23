@@ -1,0 +1,374 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
+@import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+/* line 7, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+/* line 18, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 27, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.avatar {
+  position: absolute;
+  right: 0;
+  max-width: 256px;
+}
+
+/* line 34, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+input[type=file] {
+  margin: 0 auto;
+  background-color: #F8F8F8;
+  border: none;
+  padding: 16px 32px;
+  text-decoration: none;
+}
+
+/* line 42, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.actions {
+  padding: 10px 10px;
+}
+
+/* line 46, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+div.new_photo {
+  margin: 0 auto;
+  width: 60%;
+  background-color: #F8F8F8;
+  border: none;
+  text-decoration: none;
+}
+
+/* line 54, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+div.new_photo .text-area {
+  height: 40px;
+}
+
+/* line 61, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+div.photo {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+/* line 68, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+div.photo:hover {
+  border: 1px solid #777;
+}
+
+/* line 72, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+div.photo photo {
+  width: 100%;
+  height: auto;
+}
+
+/* line 77, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+/* line 85, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.front-page-btn {
+  min-width: 80px;
+}
+
+/* line 89, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.rating-number {
+  font-family: Helvetica, sans-serif;
+  font-size: 30px;
+  display: inline;
+}
+
+/* line 95, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.submit-star {
+  background-color: inherit;
+  border: none;
+  display: inline-block;
+  padding: 0px;
+  outline: none;
+}
+
+/* line 103, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.panel {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 20px;
+  width: 500px;
+}
+
+/* line 111, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.panel .field {
+  margin-bottom: 20px;
+}
+
+/* line 115, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.panel .text-area {
+  width: 80%;
+  height: 140px;
+  max-width: 80%;
+  max-height: 200px;
+}
+
+/* line 122, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.category-dropdown {
+  background: #fff;
+}
+
+@media (min-width: 768px) {
+  /* line 128, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+
+  /* line 132, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .sidebar-nav .navbar ul {
+    float: none;
+  }
+
+  /* line 135, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .sidebar-nav .navbar ul:not {
+    display: block;
+  }
+
+  /* line 138, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+
+  /* line 142, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  /* line 152, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .footer {
+    margin-bottom: 30px;
+  }
+
+  /* line 157, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .edit {
+    color: #f0ad4e;
+  }
+
+  /* line 160, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .vote {
+    font-size: 50px;
+    text-shadow: 3px 3px #000;
+  }
+  /* line 163, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .vote:active {
+    -ms-transform: translate(2px, 2px);
+    /* IE 9 */
+    -webkit-transform: translate(2px, 2px);
+    /* Safari */
+    transform: translate(2px, 2px);
+    text-shadow: 1px 1px #000;
+  }
+
+  /* line 170, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .star-inactive {
+    color: #000;
+  }
+
+  /* line 173, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .star-active {
+    color: #ffcc00;
+  }
+
+  /* line 176, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .starvote {
+    font-size: 30px;
+  }
+  /* line 177, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .starvote:hover {
+    color: #ffcc00;
+  }
+
+  /* line 184, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .vote.negative {
+    color: #4ab79a;
+  }
+  /* line 186, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .vote.negative:hover {
+    color: #3b937c;
+  }
+
+  /* line 190, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .votes {
+    height: 140px;
+    margin-top: 20px;
+  }
+
+  /* FOR COMMENT BOX */
+  /* line 196, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .status-upload {
+    background: none repeat scroll 0 0 #f5f5f5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    float: left;
+    width: 100%;
+  }
+
+  /* line 206, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .status-upload form {
+    float: left;
+    width: 100%;
+  }
+
+  /* line 210, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .status-upload form textarea {
+    background: none repeat scroll 0 0 #fff;
+    border: medium none;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    -ms-border-radius: 4px 4px 0 0;
+    -o-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+    color: #777777;
+    float: left;
+    font-family: Lato;
+    font-size: 14px;
+    height: 100px;
+    letter-spacing: 0.3px;
+    padding: 20px;
+    width: 100%;
+    resize: vertical;
+    outline: none;
+    border: 1px solid #F2F2F2;
+  }
+
+  /* line 230, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .status-upload .form-submit {
+    float: right;
+  }
+
+  /* line 233, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .user_name {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  /* line 237, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+  .comments-list .media {
+    border-bottom: 1px dotted #ccc;
+  }
+}
+/* line 244, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+body {
+  font-family: 'Raleway', Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/*REQUIRED*/
+/* line 250, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.carousel-row {
+  margin-bottom: 10px;
+}
+
+/* line 254, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.slide-row {
+  padding: 0;
+  background-color: #ffffff;
+  min-height: 160px;
+  border: 1px solid #e7e7e7;
+  overflow: hidden;
+  height: auto;
+  position: relative;
+}
+
+/* line 265, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.slide-carousel {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+
+/* line 271, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.slide-content {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  display: block;
+  float: left;
+  width: 80%;
+  max-height: 76%;
+  padding: 1.5% 2% 2% 2%;
+  overflow-y: hidden;
+}
+
+/* line 283, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.slide-content h4 {
+  margin-bottom: 3px;
+  margin-top: 0;
+}
+
+/* line 288, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.slide-rating {
+  font-size: 20px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+/* line 296, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.slide-footer {
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 78%;
+  height: 20%;
+  margin: 1%;
+}
+
+/* Scrollbars */
+/* line 306, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.slide-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* line 310, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.slide-content::-webkit-scrollbar-thumb:vertical {
+  margin: 5px;
+  background-color: #999;
+  -webkit-border-radius: 5px;
+}
+
+/* line 316, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.slide-content::-webkit-scrollbar-button:start:decrement,
+.slide-content::-webkit-scrollbar-button:end:increment {
+  height: 5px;
+  display: block;
+}
+
+/* line 322, /home/franco/Desktop/RUBY/jueves0212/Desarrollo-de-Software/app/assets/stylesheets/projects.scss */
+.project-title {
+  text-align: center;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+}

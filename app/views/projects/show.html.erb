@@ -18,7 +18,11 @@
         <div class="row page-header" style="margin-top:0px">
             <div class="avatar">
                 <div class= "col-sm-9">
-                    <%= image_tag image_path(@project.avatar), size: "256x256", alt: "Imagen no disponible", class: "img-circle img-responsive" %>
+                <% if !@project.avatar_file_name.nil? %>
+                    <%= image_tag image_path(@project.avatar) , size: "256x256", alt: image_path('pinguino.png') ,class: "img-circle img-responsive"%>
+                <% else %>
+                    <%= render "default" %>
+                <% end %>
                 </div>
             </div>
             <div class="col-sm-1 votes">
