@@ -1,0 +1,10 @@
+
+* Cambiar mensajes a español (por ejemplo, al eliminar proyecto) 
+    config/locales/devise.en.yml
+* Mejorar pagina editar usuario
+    app/views/users/_form.html.erb
+* Terminar landing page
+    app/views/welcome/index.html.erb
+* Crear mejores seeds (proyectos "reales")
+    db/seeds.rb
+

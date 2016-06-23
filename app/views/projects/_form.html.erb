@@ -1,75 +1,76 @@
 <%= stylesheet_link_tag "projects.css" %>
 
 <div class="panel panel-default">
-<h2>
-  <% if @project.id %>
-    Editar Proyecto
-  <% else %>
-    Inscribir Nuevo Proyecto
-  <% end %>
-</h2>
-<%= form_for(@project) do |f| %>
-  <% if @project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
-
-      <ul>
-      <% @project.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="project-title">
+        <h2>
+            <% if @project.id %>
+                Editar Proyecto
+            <% else %>
+                Inscribir Nuevo Proyecto
+            <% end %>
+        </h2>
     </div>
-  <% end %>
+    <%= form_for(@project) do |f| %>
+        <% if @project.errors.any? %>
+            <div id="error_explanation">
+                <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-  <div class="field">
-    <%= f.label :titulo %><br />
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :descripción %><br />
-    <%= f.text_area :description, :class => "text-area" %>
-  </div>
-
-  <div class="field">
-      <%= f.label :avatar %>
-      <%= f.file_field :avatar %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Contenido %><br />
-    <%= f.text_area :content, :class => "text-area" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :video_link %><br />
-    <%= f.text_field :video_link %>
-  </div>
-
-  <div class="field">
-    <%= f.label :categoría %><br />
-    <%= f.collection_select :category_id, Category.all, :id, :name, {},:class => "category-dropdown" %>
-  </div>
-  
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-  <div class= "field">
-    <div class= "new_photo">
-      <%= nested_form_for @project do |p| %>
-        <%= p.fields_for :project_photos do |task_form| %>
-          <%= task_form.file_field :photo %>
-          Agregar descripcion
-          <div class="field">
-            <%= task_form.text_area :description , :class => "text-area"%>
-          </div>
-          <%= task_form.link_to_remove ".  Eliminar foto  ."  %>
+                <ul>
+                    <% @project.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
         <% end %>
-        <%= p.link_to_add ". Agregar foto  .", :project_photos %>
-      <% end %>
-    </div>
-  </div>
-  
+
+        <div class="field">
+            <%= f.label :titulo, :class => 'label-title' %><br />
+            <%= f.text_field :title, :class => 'text-field' %>
+        </div>
+
+        <div class="field">
+            <%= f.label :descripción , :class => 'label-title'%><br />
+            <%= f.text_area :description, :class => "text-area-field" %>
+        </div>
+
+        <div class="field">
+            <%= f.label :avatar , :class => 'label-title'%>
+            <%= f.file_field :avatar, :class => "avatar-field" %>
+        </div>
+
+        <div class="field">
+            <%= f.label :Contenido , :class => 'label-title'%><br />
+            <%= f.text_area :content, :class => "text-area-field" %>
+        </div>
+
+        <div class="field">
+            <%= f.label :video_link, :class => 'label-title' %><br />
+            <%= f.text_field :video_link, :class => 'text-field' %>
+        </div>
+
+        <div class="field">
+            <%= f.label :categoría , :class => 'label-title'%><br />
+            <%= f.collection_select :category_id, Category.all, :id, :name, {},:class => "category-dropdown" %>
+        </div>
+
+        <div class= "field">
+            <div class= "new_photo">
+                <%= nested_form_for @project do |p| %>
+                    <%= p.fields_for :project_photos do |task_form| %>
+                        <%= task_form.file_field :photo %>
+                        Agregar descripcion
+                        <div class="field">
+                            <%= task_form.text_area :description , :class => "text-area"%>
+                        </div>
+                        <%= task_form.link_to_remove ".  Eliminar foto  ."  %>
+                    <% end %>
+                    <%= p.link_to_add ". Agregar foto  .", :project_photos %>
+                <% end %>
+            </div>
+        </div>
+
+        <div class="actions">
+            <%= f.submit %>
+        </div>
+    <% end %>
 </div>
-<% end %>
